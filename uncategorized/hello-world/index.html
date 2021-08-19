@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.0.0.alpha.1'>
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -20,7 +20,7 @@
   <meta content="Scylamb&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1629379262199" as="style">
+  <link rel="preload" href="/css/style.css?time=1629382751073" as="style">
   <!-- 页面元数据 -->
   <title>Hello World - Scylamb's Blog</title>
   <meta name="keywords" content="aaa">
@@ -1817,345 +1817,10 @@ ul.list-v >li>a:hover {
   background: rgba(0,0,0,0.7);
   z-index: 1;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-mode: 'dark';
-  }
-  :root:not([data-user-color-scheme]) {
-    --color-site-body: #000;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
-    --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
-    --color-block: #3a3a3a;
-    --color-codeblock: #343a3c;
-    --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
-    --color-list: #aaa;
-    --color-list-hl: #69dfc4;
-    --color-meta: #888;
-    --color-link: #888;
-    --ohhho-color-p: var(--color-p) !important;
-    --ohhho-color-text: var(--color-text) !important;
-    --ohhho-color-card: var(--color-card) !important;
-    --ohhho-color-block: var(--color-block) !important;
-    --ohhho-expand-before-background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9)) !important;
-    --ohhho-expand-after-background: rgba(0,0,0,0.9) !important;
-  }
-  :root:not([data-user-color-scheme]) #l_body {
-    background-color: #000 !important;
-  }
-  :root:not([data-user-color-scheme]) fal,
-  :root:not([data-user-color-scheme]) fad,
-  :root:not([data-user-color-scheme]) fa,
-  :root:not([data-user-color-scheme]) svg.iconfont,
-  :root:not([data-user-color-scheme]) img,
-  :root:not([data-user-color-scheme]) .lazyload {
-    filter: brightness(70%) !important;
-  }
-  :root:not([data-user-color-scheme]) #wrapper .title {
-    color: var(--color-meta);
-  }
-  :root:not([data-user-color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([data-user-color-scheme]) ul.list-v >li>a {
-    color: var(--color-list);
-  }
-  :root:not([data-user-color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
-  }
-  :root:not([data-user-color-scheme]) .nav-main .u-search-input {
-    background: var(--color-card) !important;
-  }
-  :root:not([data-user-color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block);
-  }
-  :root:not([data-user-color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card);
-  }
-  :root:not([data-user-color-scheme]) .article blockquote {
-    background: var(--color-block);
-  }
-  :root:not([data-user-color-scheme]) .article-title a {
-    color: var(--color-h1);
-  }
-  :root:not([data-user-color-scheme]) details>summary {
-    color: var(--color-p);
-    background: var(--color-site-bg);
-  }
-  :root:not([data-user-color-scheme]) details {
-    border: 1px solid var(--color-site-bg);
-    background: var(--color-site-bg);
-  }
-  :root:not([data-user-color-scheme]) #u-search .modal,
-  :root:not([data-user-color-scheme]) #u-search .modal-header,
-  :root:not([data-user-color-scheme]) #u-search .modal-body {
-    background: var(--color-card) !important;
-  }
-  :root:not([data-user-color-scheme]) #u-search .modal-body .modal-results .result:hover {
-    background: var(--color-block) !important;
-  }
-  :root:not([data-user-color-scheme]) .widget.blogger .content .social-wrapper a.social:hover {
-    background: var(--color-card);
-  }
-  :root:not([data-user-color-scheme]) .content {
-    color: var(--color-p);
-  }
-  :root:not([data-user-color-scheme]) .note {
-    background: var(--color-block) !important;
-  }
-  :root:not([data-user-color-scheme]) div.tabs ul.nav-tabs li.tab.active a {
-    color: var(--color-p);
-    background: var(--color-card);
-  }
-  :root:not([data-user-color-scheme]) kbd {
-    background: var(--color-block) !important;
-  }
-  :root:not([data-user-color-scheme]) .cover-wrapper.dock .menu .list-h a:hover,
-  :root:not([data-user-color-scheme]) .cover-wrapper.featured .menu .list-h a:hover,
-  :root:not([data-user-color-scheme]) .cover-wrapper.focus .menu .list-h a:hover {
-    color: var(--color-text) !important;
-  }
-  :root:not([data-user-color-scheme]) .gutter {
-    background: var(--color-card) !important;
-    background-color: var(--color-card) !important;
-  }
-  :root:not([data-user-color-scheme]) .highlight figcaption {
-    background-color: #21252b;
-  }
-  :root:not([data-user-color-scheme]) .highlight pre .line,
-  :root:not([data-user-color-scheme]) .highlight pre .params {
-    color: rgba(158,142,142,0.9);
-  }
-  :root:not([data-user-color-scheme]) *:not(.highlight) >table tr {
-    background-color: var(--color-card);
-  }
-  :root:not([data-user-color-scheme]) *:not(.highlight) >table th {
-    background: var(--color-site-bg);
-  }
-  :root:not([data-user-color-scheme]) *:not(.highlight) table td,
-  :root:not([data-user-color-scheme]) *:not(.highlight) table th {
-    border-color: var(--color-site-bg);
-  }
-  :root:not([data-user-color-scheme]) *:not(.highlight) >table tr:hover {
-    background: var(--color-codeblock);
-  }
-  :root:not([data-user-color-scheme]) .timenode .highlight {
-    border-color: var(--color-site-bg) !important;
-  }
-  :root:not([data-user-color-scheme]) blockquote p {
-    color: var(--color-p);
-  }
-  :root:not([data-user-color-scheme]) #archive-page .archive .all-tags ul li span {
-    color: var(--color-text);
-    background: #6f6f72;
-  }
-  :root:not([data-user-color-scheme]) .ohhho pre {
-    background: var(--color-meta);
-    border: 1px solid var(--color-block);
-  }
-  :root:not([data-user-color-scheme]) .ohhho .vlist .vcard .vcomment-body .vhead {
-    filter: brightness(85%);
-  }
-  :root:not([data-user-color-scheme]) #valine_container button {
-    background-color: var(--color-block) !important;
-  }
-  :root:not([data-user-color-scheme]) #valine_container .vcards .vcontent.expand:before {
-    background: none !important;
-  }
-  :root:not([data-user-color-scheme]) #valine_container .vcards .vcontent.expand:after {
-    background: #393c40 !important;
-  }
-  :root:not([data-user-color-scheme]) .v[data-class=v] code,
-  :root:not([data-user-color-scheme]) .v[data-class=v] pre {
-    background-color: #332828 !important;
-  }
-}
-[data-user-color-scheme='dark'] {
-  --color-site-body: #000;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
-  --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
-  --color-block: #3a3a3a;
-  --color-codeblock: #343a3c;
-  --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
-  --color-list: #aaa;
-  --color-list-hl: #69dfc4;
-  --color-meta: #888;
-  --color-link: #888;
-  --ohhho-color-p: var(--color-p) !important;
-  --ohhho-color-text: var(--color-text) !important;
-  --ohhho-color-card: var(--color-card) !important;
-  --ohhho-color-block: var(--color-block) !important;
-  --ohhho-expand-before-background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9)) !important;
-  --ohhho-expand-after-background: rgba(0,0,0,0.9) !important;
-}
-[data-user-color-scheme='dark'] #l_body {
-  background-color: #000 !important;
-}
-[data-user-color-scheme='dark'] fal,
-[data-user-color-scheme='dark'] fad,
-[data-user-color-scheme='dark'] fa,
-[data-user-color-scheme='dark'] svg.iconfont,
-[data-user-color-scheme='dark'] img,
-[data-user-color-scheme='dark'] .lazyload {
-  filter: brightness(70%) !important;
-}
-[data-user-color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta);
-}
-[data-user-color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[data-user-color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list);
-}
-[data-user-color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
-}
-[data-user-color-scheme='dark'] .nav-main .u-search-input {
-  background: var(--color-card) !important;
-}
-[data-user-color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block);
-}
-[data-user-color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card);
-}
-[data-user-color-scheme='dark'] .article blockquote {
-  background: var(--color-block);
-}
-[data-user-color-scheme='dark'] .article-title a {
-  color: var(--color-h1);
-}
-[data-user-color-scheme='dark'] details>summary {
-  color: var(--color-p);
-  background: var(--color-site-bg);
-}
-[data-user-color-scheme='dark'] details {
-  border: 1px solid var(--color-site-bg);
-  background: var(--color-site-bg);
-}
-[data-user-color-scheme='dark'] #u-search .modal,
-[data-user-color-scheme='dark'] #u-search .modal-header,
-[data-user-color-scheme='dark'] #u-search .modal-body {
-  background: var(--color-card) !important;
-}
-[data-user-color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
-  background: var(--color-block) !important;
-}
-@media screen and (max-width: 500px) {
-  [data-user-color-scheme='dark'] .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
-[data-user-color-scheme='dark'] .widget.blogger .content .social-wrapper a.social:hover {
-  background: var(--color-card);
-}
-[data-user-color-scheme='dark'] .content {
-  color: var(--color-p);
-}
-[data-user-color-scheme='dark'] .note {
-  background: var(--color-block) !important;
-}
-[data-user-color-scheme='dark'] div.tabs ul.nav-tabs li.tab.active a {
-  color: var(--color-p);
-  background: var(--color-card);
-}
-[data-user-color-scheme='dark'] kbd {
-  background: var(--color-block) !important;
-}
-[data-user-color-scheme='dark'] .cover-wrapper.dock .menu .list-h a:hover,
-[data-user-color-scheme='dark'] .cover-wrapper.featured .menu .list-h a:hover,
-[data-user-color-scheme='dark'] .cover-wrapper.focus .menu .list-h a:hover {
-  color: var(--color-text) !important;
-}
-[data-user-color-scheme='dark'] .gutter {
-  background: var(--color-card) !important;
-  background-color: var(--color-card) !important;
-}
-[data-user-color-scheme='dark'] .highlight figcaption {
-  background-color: #21252b;
-}
-[data-user-color-scheme='dark'] .highlight pre .line,
-[data-user-color-scheme='dark'] .highlight pre .params {
-  color: rgba(158,142,142,0.9);
-}
-[data-user-color-scheme='dark'] *:not(.highlight) >table tr {
-  background-color: var(--color-card);
-}
-[data-user-color-scheme='dark'] *:not(.highlight) >table th {
-  background: var(--color-site-bg);
-}
-[data-user-color-scheme='dark'] *:not(.highlight) table td,
-[data-user-color-scheme='dark'] *:not(.highlight) table th {
-  border-color: var(--color-site-bg);
-}
-[data-user-color-scheme='dark'] *:not(.highlight) >table tr:hover {
-  background: var(--color-codeblock);
-}
-[data-user-color-scheme='dark'] .timenode .highlight {
-  border-color: var(--color-site-bg) !important;
-}
-[data-user-color-scheme='dark'] blockquote p {
-  color: var(--color-p);
-}
-[data-user-color-scheme='dark'] #archive-page .archive .all-tags ul li span {
-  color: var(--color-text);
-  background: #6f6f72;
-}
-[data-user-color-scheme='dark'] .ohhho pre {
-  background: var(--color-meta);
-  border: 1px solid var(--color-block);
-}
-[data-user-color-scheme='dark'] .ohhho .vlist .vcard .vcomment-body .vhead {
-  filter: brightness(85%);
-}
-[data-user-color-scheme='dark'] #valine_container button {
-  background-color: var(--color-block) !important;
-}
-[data-user-color-scheme='dark'] #valine_container .vcards .vcontent.expand:before {
-  background: none !important;
-}
-[data-user-color-scheme='dark'] #valine_container .vcards .vcontent.expand:after {
-  background: #393c40 !important;
-}
-[data-user-color-scheme='dark'] .v[data-class=v] code,
-[data-user-color-scheme='dark'] .v[data-class=v] pre {
-  background-color: #332828 !important;
-}
-@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
-  .l_header .m_search {
-    background: var(--color-site-bg) !important;
-  }
-}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1629379262199" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1629379262199"></noscript>
-    <script>
-      var userColorScheme=localStorage.getItem("user-color-scheme")
-      if(userColorScheme){
-        document.documentElement.setAttribute("data-user-color-scheme", userColorScheme);
-      }
-    </script>
+  <link rel="stylesheet" href="/css/style.css?time=1629382751073" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1629382751073"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2251,7 +1916,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="home"
                   >
-                  Blogs
+                  <i class='fas fa-rss fa-fw'></i>博客
                 </a>
                 
               </li>
@@ -2267,7 +1932,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="categories"
                   >
-                  Categories
+                  <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -2283,7 +1948,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="tags"
                   >
-                  Tags
+                  <i class='fas fa-tags fa-fw'></i>标签
                 </a>
                 
               </li>
@@ -2299,7 +1964,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="archives"
                   >
-                  Archives
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -2315,42 +1996,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="about"
                   >
-                  About
+                  <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  More
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/test/
-                  
-                  
-                  
-                    id="test"
-                  >
-                  test
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
                 
               </li>
             
@@ -2383,7 +2030,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="home"
                   >
-                  Blogs
+                  <i class='fas fa-rss fa-fw'></i>博客
                 </a>
                 
               </li>
@@ -2399,7 +2046,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="categories"
                   >
-                  Categories
+                  <i class='fas fa-folder-open fa-fw'></i>分类
                 </a>
                 
               </li>
@@ -2415,7 +2062,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="tags"
                   >
-                  Tags
+                  <i class='fas fa-tags fa-fw'></i>标签
                 </a>
                 
               </li>
@@ -2431,7 +2078,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="archives"
                   >
-                  Archives
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
                 </a>
                 
               </li>
@@ -2447,42 +2110,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   
                     id="about"
                   >
-                  About
+                  <i class='fas fa-info-circle fa-fw'></i>关于
                 </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                  
-                  
-                  >
-                  More
-                </a>
-                
-                  <ul class="list-v">
-                    
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/test/
-                  
-                  
-                  
-                    id="test"
-                  >
-                  test
-                </a>
-                
-              </li>
-            
-          
-                    
-                  </ul>
                 
               </li>
             
@@ -2505,7 +2134,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post search' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
 
@@ -2513,51 +2142,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='top'>
     
     
-      <p class="title">ScyLamb</p>
+      <p class="title">Volantis</p>
     
-    
-      <p class="subtitle">Reading is to the mind while exercise to the body</p>
     
   </div>
   <div class='bottom'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="A Boy" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
     <div class='menu navigation'>
       <div class='list-h'>
         
           
-            <a href="/"
+            <a href="/v4/getting-started/"
               
               
-              id="home">
-              <p>Blogs</p>
+              id="v4getting-started">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
             </a>
           
-            <a href="/tags/"
+            <a href="/faqs/"
               
               
-              id="tags">
-              <p>Tags</p>
+              id="faqs">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
+            </a>
+          
+            <a href="/examples/"
+              
+              
+              id="examples">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
+            </a>
+          
+            <a href="/contributors/"
+              
+              
+              id="contributors">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
             </a>
           
             <a href="/archives/"
               
               
               id="archives">
-              <p>Archives</p>
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
             </a>
           
-            <a href="/about/"
+            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
               
               
-              id="about">
-              <p>About</p>
+              id="https:githubcomvolantis-xhexo-theme-volantis">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>源码</p>
             </a>
           
         
@@ -2595,7 +2228,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author'>
   <a class='author' href="/" rel="nofollow">
     <img no-lazy src="">
-    <p>ScyLamb</p>
+    <p>请设置文章作者</p>
   </a>
 </div>
 
@@ -2704,6 +2337,53 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://scylamb.github.io/uncategorized/hello-world/&title=Hello World - Scylamb's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://scylamb.github.io/uncategorized/hello-world/&title=Hello World - Scylamb's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://scylamb.github.io/uncategorized/hello-world/&title=Hello World - Scylamb's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
 
         
       
@@ -2718,6 +2398,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BugKu/BugKu_web1~35/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i></p>
+          <p class='content'>0x00 web1payload：F12
+0x01 web2payload：F12-&gt;Elements-&gt;右键修改为maxlength=&quot;2&quot;
+0x02 web3...</p>
+        </a>
+      
+      
+        <a class='next' href='/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/'>
+          <p class='title'>sqlilabs_Page-4<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>sqli_labs_Page-4前言之前没坚持做完sqlilabs，这次来填坑
+参考：国光    sqlilabs注入天书
+注：大量复制原文，因为这两篇写的很好了，不重复造轮子了
+0x35 le...</p>
+        </a>
+      
+    </div>
+  
   <!-- Custom Files postEnd begin-->
   
   <!-- Custom Files postEnd end-->
@@ -2728,14 +2428,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> comment</p>
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
 
     
-      <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
+      <div id="beaudar_container"></div>
     
 
     
@@ -2853,13 +2550,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.0.0.alpha.1" target="_blank" class="codename">Volantis</a>
         as theme
       
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2021</a></p>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
 
         </div>
       
@@ -3157,107 +2854,194 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <!-- internal -->
 
 
+  
+  
+  
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='navigation menuNavigation-Content'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <li class='option menuOption-Content'>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyText'>
+          
+          <i class='fa fa-copy fa-fw'></i> Copy Text
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyPaste'>
+          
+          <i class='fa fa-paste fa-fw mR12'></i> 粘贴文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copySelect'>
+          
+          <i class='fa fa-object-ungroup fa-fw mR12'></i> 全选文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyCut'>
+          
+          <i class='fa fa-cut fa-fw mR12'></i> 剪切文本
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='openTab'>
+          
+          <i class='fa fa-external-link-square-alt fa-fw mR12'></i> Open Link in New Tab
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copySrc'>
+          
+          <i class='fa fa-image fa-fw mR12'></i> Copy Image Link
+        </span>
+        <span class='vlts-menu opt fix-cursor-default menu-Option' data-fn-type='copyImg'>
+          
+          <i class='fa fa-images fa-fw mR12'></i> 复制图片文件
+        </span>
+      </li>
+      
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        
+      >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        
+      >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        
+      >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xvolantis-docs"
+        
+      >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li class="menuLoad-Content">
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        
+      >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default' id='printHtml'>
+              <i class='fa fa-print fa-fw '></i> 打印页面
+            </span>
+          </li>  
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default toggle-mode-btn' id='menuDarkBtn'>
+              <i class='fa fa-moon fa-fw '></i> 暗黑模式
+            </span>
+          </li>
+        
+      
+        
+          <li class='option menuOption-Content'>
+            <span class='vlts-menu opt fix-cursor-default' id='readingModel'>
+              <i class='fa fa-book-open fa-fw '></i> 阅读模式
+            </span>
+          </li>  
+        
+      
+        
+      
+    </ul>
+  </div>
+  <script>
+    volantis.rightMenu = {};
+    volantis.rightMenu.faicon = 'fa' || 'fa';
+    
+    
+      volantis.rightMenu.defaultStyles = true;
+    
+    
+    
+    
+    
+      volantis.APlayerController = {};
+    
+    volantis.js('/js/rightMenu.js?time=1629382751073')
+  </script>
+
+
 
 <!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
-
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "user-color-scheme";
-const rootElementDarkModeAttributeName = "data-user-color-scheme";
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-  getCustomDarkMode();
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-/**
- * get target mode
- */
- const getCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  if(currentSetting=="dark"){
-    volantis.dark.mode="light";
-  }else{
-    volantis.dark.mode="dark";
-  }
-  // console.log(volantis.dark.mode)
-};
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-/**
- * 暗黑模式触发器
- */
-volantis.dark.toggle=()=>{
-  const mode = toggleCustomDarkMode();
-  applyCustomDarkModeSettings(mode);
-  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
-  volantis.dark.method.toggle.start();
-}
-/**
- * bind event for toggle button
- */
-
-function bindToggleButton() {
-  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
-  btn.forEach(function (e) {
-    volantis.dom.$(e).on('click',volantis.dark.toggle);
-  })
-}
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", ()=>{
-  volantis.requestAnimationFrame(bindToggleButton)
-});
-volantis.pjax.push(bindToggleButton);
-</script>
-
 
 
 
@@ -3266,19 +3050,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1629379262198")
+        volantis.js("/js/plugins/sites.js?time=1629382751073")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1629379262198")
+        volantis.js("/js/plugins/friends.js?time=1629382751073")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1629379262198")
+        volantis.js("/js/plugins/contributors.js?time=1629382751073")
       }
     
   };
@@ -3342,52 +3126,61 @@ volantis.pjax.push(bindToggleButton);
 
 
   <script>
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-  function pjax_valine() {
-    if(!document.querySelectorAll("#valine_container")[0])return;
-    let pagePlaceholder = pdata.commentPlaceholder || "";
-    let path = pdata.commentPath;
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
+  volantis.beaudar = {};
+
+  function check_beaudar() {
+    if (volantis.dark.mode === "dark") {
+      volantis.beaudar.Theme = 'github-dark';
+    } else {
+      volantis.beaudar.Theme = 'github-light';
     }
-    var valine = new Valine();
-    valine.init(Object.assign({"path":null,"placeholder":null,"appId":null,"appKey":null,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
-      el: '#valine_container',
-      path: path,
-      placeholder: pagePlaceholder,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps,
-    }))
+
+    return document.getElementById("beaudar_container");
   }
-  volantis.js('/js/valine.js?time=1629379262199').then(pjax_valine)
-  volantis.pjax.push(pjax_valine);
+
+  function pjax_beaudar() {
+    const HEAD = check_beaudar();
+    if (!HEAD) return;
+
+    const script = document.createElement('script');
+    let issuenumber = "";
+    if (issuenumber) {
+      script.setAttribute('issue-number', issuenumber);
+    } else {
+      script.setAttribute('issue-term', "pathname");
+    }
+    script.setAttribute('src', 'https://beaudar.lipk.org/client.js');
+    script.setAttribute('repo', 'xxx/xxx');
+    script.setAttribute('input-position', 'top');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('branch', 'main');
+    script.setAttribute('comment-order', 'desc');
+    script.setAttribute('label', '✨💬✨');
+    script.setAttribute('theme', volantis.beaudar.Theme);
+    HEAD.appendChild(script);
+  }
+
+  function dark_beaudar() {
+    const HEAD = check_beaudar();
+    if (!HEAD) return;
+
+    const message = {
+      type: 'set-theme',
+      theme: volantis.beaudar.Theme
+    };
+    const beaudarIframe = document.querySelector('iframe');
+    beaudarIframe.contentWindow.postMessage(message, 'https://beaudar.lipk.org');
+  }
+  pjax_beaudar();
+  volantis.pjax.push(pjax_beaudar);
+  volantis.dark.push(dark_beaudar);
 </script>
 
 
 
 
 
-
-<script src="/js/app.js?time=1629379262199.js"></script>
+<script src="/js/app.js?time=1629382751073.js"></script>
 
 
 <!-- optional -->
@@ -3400,7 +3193,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1629379262199");
+    return volantis.js("/js/search/hexo.js?time=1629382751073");
   }
 
   function loadSearchService() {
@@ -3668,8 +3461,8 @@ volantis.pjax.push(bindToggleButton);
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629379262198')
-      volantis.js('/js/message.js?time=1629379262198', () => {
+      volantis.css('/css/message.css?time=1629382751073')
+      volantis.js('/js/message.js?time=1629382751073', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3713,8 +3506,8 @@ volantis.pjax.push(bindToggleButton);
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629379262198')
-      volantis.js('/js/message.js?time=1629379262198', () => {
+      volantis.css('/css/message.css?time=1629382751073')
+      volantis.js('/js/message.js?time=1629382751073', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {

