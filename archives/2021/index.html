@@ -20,7 +20,7 @@
   <meta content="Scylamb&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1629383072903" as="style">
+  <link rel="preload" href="/css/style.css?time=1632838606460" as="style">
   <!-- 页面元数据 -->
   <title>Archive: 2021 - Scylamb's Blog</title>
   <meta name="keywords" content="aaa">
@@ -2146,8 +2146,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1629383072903" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1629383072903"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1632838606460" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1632838606460"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("user-color-scheme")
       if(userColorScheme){
@@ -2582,24 +2582,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       
     
     
@@ -2613,31 +2595,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/XCTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/web%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6%E5%8C%BA/">
-        Aug 19, 2021
+      <a href="/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/">
+        Sep 28, 2021
       </a>
     </h2>
   
   <div class='md'>
     
       
-        [TOC]
-0x00 baby_web
-hint:想想初始页面是哪个
+        CVE-2020-15148 Yii反序列化漏洞
+官网2.0.38提交说明
+官网修复说明
+搭建环境&lt;2.0.38
+下载2.0.37
+我下载了yii-basic-app-2.0.37.tgz
+下载到本地后解压，修改config/web.php文件里cookieValidationKey的值
 
-
-打开发现在首页在1.php
-按照提示去index.php，抓包。
-getflag0x01 Training-WWW-Robots
-按题意直接访问robots.txt
-getFlag
-
-0x02 Web_python_template_injection
-访问显示
-python template injection
-
-
-...
+新建config/controllers/TestControllers.php添加一个反序列化...
       
     
   </div>
@@ -2645,437 +2619,12 @@ python template injection
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2021-08-19</time>
+        <time>2021-09-28</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/XCTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/web%E9%AB%98%E6%89%8B%E8%BF%9B%E9%98%B6%E5%8C%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/XCTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/web%E6%96%B0%E6%89%8B%E5%8C%BA/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        view_source
-F12查看得flag
-get_post
-按题意提交数据，
-?a=1 
-hackbar b=2
-得flag
-robots
-
-题目描述：X老师上课讲了Robots协议，小宁同学却上课打了瞌睡，赶紧来教教小宁Robots协议是什么吧。
-
-好家伙，什么是robots协议
-百度百科https://baike.baidu.com/item/robots%E5%8D%8F%E8%A...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/XCTF%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/web%E6%96%B0%E6%89%8B%E5%8C%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/Scattered%20topics/CG_sql%E6%B3%A8%E5%85%A52/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        12345678910111213141516171819202122232425262728293031&lt;html&gt;&lt;head&gt;Secure Web Login II&lt;/head&gt;&lt;body&gt;&lt;?phpif($_POST[user] &amp;&amp; $_POST[pass]) &#123;   mysql_connect(SAE_...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/Scattered%20topics/CG_sql%E6%B3%A8%E5%85%A52/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/CTFhub/web/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        webweb前置技能参考链接-操作系统-数据库-HTML/CSS-程序语言 
-HTTP协议0x01 请求方式1）HTTP Method 是可以自定义的，并且区分大小写可以通过抓包更改其HTTP的方法2）kali系统中的curl命令实现抓包（curl支持几乎所有操作系统）常用命令：-v是详细信息 -X是指定请求方法curl参考一     curl参考二
-0x02 302跳转
-关于302的题：
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/CTFhub/web/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019EasySQL/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        ![img](image/极客大挑战 2019EasySQL.image/clipboard.png)
-题目显示easysql，测试SQL注入
-注入语句顺序及回显
-123456789101112131415161718192021222324252627282930313233username=1&#x27;&amp;password=passwordYou have an error in...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019EasySQL/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%202019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        buuctf-[强网杯 2019]随便注
-有个表单，输入1，2回显结果，输入
-1231&#x27; order by 1#1&#x27; order by 2#1&#x27; order by 3#  报错
-
-判断为字符型注入
-输入1’ union select 1,2,3# 回显
-return preg_match(“/select|update|delete|drop|insert|wh...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%5B%E5%BC%BA%E7%BD%91%E6%9D%AF%202019%5D%E9%9A%8F%E4%BE%BF%E6%B3%A8/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%5BHCTF%202018%5Dwarmup/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        warmup（HCTF 2018）
-
-看到页面只有滑稽，果断查看源代码，发现source.php 发现代码，分析一波
-
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455&lt;?php    highlight_file(__FILE__)...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/%5BHCTF%202018%5Dwarmup/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/V&N2021/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/V&N2021/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/SUCTF_2019EasySQL/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-post
-1234567891011121314151617181920212223242526272829303132333435363738394041query=1Array ( [0] =&gt; 1 )query=数字，都返回如上query=flagNonono.query=flaquery=1&#x27;#无回显query=1#Array ( [0] =&gt; 1 )quer...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/SUCTF_2019EasySQL/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/ACTF2020_%E6%96%B0%E7%94%9F%E8%B5%9B/">
-        Aug 19, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        0x01 Include
-源代码中发现文件包含
-payload：
-
-1?file=php://filter/read=convert.base64-encode/resource=flag.php
-
-得到PD9waHAKZWNobyAiQ2FuIHlvdSBmaW5kIG91dCB0aGUgZmxhZz8iOwovL2ZsYWd7NThkODk3MTItYjVjNC00OWQwLWE1ZDg...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-19</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/BuuCTF/ACTF2020_%E6%96%B0%E7%94%9F%E8%B5%9B/'>
+          <a class='readmore' href='/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90/'>
             Read More
           </a>
         </div>
@@ -3091,21 +2640,6 @@ payload：
     
   </section>
   
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2021/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
     
   
 
@@ -3186,51 +2720,12 @@ payload：
   
     
     
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/ctf/" href="/categories/ctf/"
-            id="categoriesctf"
-            ><div class='name'>ctf</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
 
   
 
   
     
     
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/sqlilabs/" style="font-size: 14px; color: #999">sqlilabs</a> <a href="/tags/%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">做题笔记</a>
-    </div>
-  </section>
-
 
   
 
@@ -3746,19 +3241,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1629383072903")
+        volantis.js("/js/plugins/sites.js?time=1632838606460")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1629383072903")
+        volantis.js("/js/plugins/friends.js?time=1632838606460")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1629383072903")
+        volantis.js("/js/plugins/contributors.js?time=1632838606460")
       }
     
   };
@@ -3858,7 +3353,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }))
   }
-  volantis.js('/js/valine.js?time=1629383072903').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1632838606460').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3867,7 +3362,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1629383072903.js"></script>
+<script src="/js/app.js?time=1632838606460.js"></script>
 
 
 <!-- optional -->
@@ -3880,7 +3375,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1629383072903");
+    return volantis.js("/js/search/hexo.js?time=1632838606460");
   }
 
   function loadSearchService() {
@@ -4148,8 +3643,8 @@ volantis.pjax.push(bindToggleButton);
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629383072903')
-      volantis.js('/js/message.js?time=1629383072903', () => {
+      volantis.css('/css/message.css?time=1632838606460')
+      volantis.js('/js/message.js?time=1632838606460', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -4193,8 +3688,8 @@ volantis.pjax.push(bindToggleButton);
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1629383072903')
-      volantis.js('/js/message.js?time=1629383072903', () => {
+      volantis.css('/css/message.css?time=1632838606460')
+      volantis.js('/js/message.js?time=1632838606460', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
